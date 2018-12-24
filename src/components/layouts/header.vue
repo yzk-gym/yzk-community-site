@@ -1,11 +1,11 @@
-<template>
-  <Menu></Menu>
-</template>
+<header>
+  <nav>
+    <li>イベント</li>
+    <li>イベントリスト</li>
+  </nav>
+</header>
 <script>
-import Menu from '../menu';
-
 export default {
   name: 'Header',
-  components: { Menu },
 };
 </script>
