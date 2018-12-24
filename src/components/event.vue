@@ -1,12 +1,15 @@
-<Header></Header>
 <template>
-  <div></div>
+  <div>
+    <p>テスト</p>
+  </div>
 </template>
 <script>
-import Header from './/layouts/header';
 
 export default {
   name: 'Events',
+<<<<<<< Updated upstream:src/components/event.vue
   components: { Header },
+=======
+>>>>>>> Stashed changes:src/components/events.vue
 };
 </script>
