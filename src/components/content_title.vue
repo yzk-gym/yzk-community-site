@@ -13,10 +13,7 @@ export default{
     width:auto;
   }
   #c-content-title {
-    font-size: 18px;
-    border-bottom: solid black 1px;
+    margin: 0;
     font-family: "Al Nile";
-    padding-left: 10px;
-    margin-right: 55%;
   }
 </style>

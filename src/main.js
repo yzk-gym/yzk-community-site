@@ -3,18 +3,11 @@
 import Vue from 'vue';
 import router from './router';
 import Events from './components/events';
-import Logo from './components/logo';
-import NextEvent from './components/next_event';
+import Top from './top';
 
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
-new Vue({
-  el: '#next-event',
-  router,
-  components: { NextEvent },
-  template: '<NextEvent/>',
-});
 
 new Vue({
   el: '#events',
@@ -24,7 +17,7 @@ new Vue({
 });
 
 new Vue({
-  el: '#p-logo',
-  components: { Logo },
-  template: '<logo/>',
+  el: '#top',
+  components: { Top },
+  template: '<top/>',
 });

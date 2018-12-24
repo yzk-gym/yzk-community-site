@@ -1,6 +1,6 @@
 <template>
-  <div class="p-next-event">
-    <ContentTitle></ContentTitle>
+  <div id="p-next-event">
+    <ContentTitle id="c-next-event-title"></ContentTitle>
     <Button></Button>
   </div>
 </template>
@@ -14,7 +14,17 @@ export default {
 };
 </script>
 <style>
-  .p-next-event{
+  #p-next-event{
+    position: relative;
+    height:500px;
     background-color: #0085B3;
+  }
+  #c-next-event-title {
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    padding:0 1em 0 0.5em;
+    border-bottom: solid white 1px;
+    top: -1em;
   }
 </style>
