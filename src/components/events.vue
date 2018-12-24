@@ -6,7 +6,7 @@
 import Header from './/layouts/header';
 
 export default {
-  name: 'Events',
+  name: 'events',
   components: { Header },
 };
 </script>
