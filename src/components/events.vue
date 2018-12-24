@@ -1,11 +1,12 @@
+<Header></Header>
 <template>
-  <div>
-    <p>テスト</p>
-  </div>
+  <div></div>
 </template>
 <script>
+import Header from './/layouts/header';
 
 export default {
-  name: 'Events',
+  name: 'events',
+  components: { Header },
 };
 </script>
