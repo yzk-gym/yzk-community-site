@@ -1,23 +1,23 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
-import App from './App';
 import router from './router';
-import Header from './components/layouts/header';
+import Events from './components/events';
+import Top from './top';
 
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
+
 new Vue({
-  el: '#app',
+  el: '#events',
   router,
-  components: { App },
-  template: '<App/>',
+  components: { Events },
+  template: '<events/>',
 });
 
 new Vue({
-  el: '#header',
-  router,
-  components: { Header },
-  template: '<header/>',
+  el: '#top',
+  components: { Top },
+  template: '<top/>',
 });
