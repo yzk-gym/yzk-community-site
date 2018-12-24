@@ -1,7 +1,7 @@
 <template>
   <div id="p-logo">
-    <img src="../assets/1223_logo_-01.svg" id="c-logo-cube"/>
-    <img src="../assets/1223_logo_-02.svg" id="c-logo-text"/>
+    <img src="../assets/cube_logo_white.svg" id="c-logo-cube"/>
+    <img src="../assets/text_logo_white.svg" id="c-logo-text"/>
   </div>
 </template>
 <script>
@@ -13,6 +13,7 @@ export default {
   #p-logo{
     height: 150px;
     text-align: center;
+    color: white;
   }
   #c-logo-cube {
     max-height: 40%;
