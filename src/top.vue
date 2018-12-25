@@ -1,5 +1,5 @@
 <template>
-  <div id="p-top">
+  <div id="top">
     <logo></logo>
     <next-event></next-event>
   </div>
@@ -8,13 +8,14 @@
 import 'normalize.css';
 import Logo from './components/logo';
 import NextEvent from './components/next_event';
+import Footer from './components/layouts/footer';
 
 export default {
-  components: { NextEvent, Logo },
+  components: { Footer, NextEvent, Logo },
 };
 </script>
 <style>
-  #p-top {
+  #top {
     width: 100vw;
     background-color: #009ACC;
   }

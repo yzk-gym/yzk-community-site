@@ -10,13 +10,13 @@ export default {
 </script>
 <style>
   #p-button {
-    margin: 0 20%;
+    margin: 0 15%;
     background-color: #FF8A7D;
-    border-radius: 0.1em 0.1em 0.1em 0.1em;
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
     text-align: center;
   }
   #c-button-text {
-    padding: 0.2em;
+    margin: 0.5em;
     color: white;
   }
 </style>
