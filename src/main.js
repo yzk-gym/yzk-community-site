@@ -4,6 +4,7 @@ import Vue from 'vue';
 import router from './router';
 import Events from './components/events';
 import Top from './top';
+import Footer from './components/layouts/footer';
 
 Vue.config.productionTip = false;
 
@@ -19,5 +20,10 @@ new Vue({
 new Vue({
   el: '#top',
   components: { Top },
-  template: '<top/>',
+  template: '<Top/>',
+});
+new Vue({
+  el: '#footer',
+  components: { Footer },
+  template: '<Footer/>',
 });
