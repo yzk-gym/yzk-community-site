@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Events from '../components/events';
-import Logo from '../components/logo';
+import Events from '../components/Events';
+import Logo from '../components/Logo';
 
 Vue.use(Router);
 

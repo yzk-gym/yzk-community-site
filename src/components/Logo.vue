@@ -1,7 +1,7 @@
 <template>
   <div id="p-logo">
-    <img src="../assets/cube_logo_white.svg" id="c-logo-cube"/>
-    <img src="../assets/text_logo_white.svg" id="c-logo-text"/>
+    <img src="../assets/img/cube_logo_white.svg" id="c-logo-cube"/>
+    <img src="../assets/img/text_logo_white.svg" id="c-logo-text"/>
   </div>
 </template>
 <script>

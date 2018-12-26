@@ -1,6 +1,6 @@
 <template>
   <div id="p-next-event">
-    <ContentTitle id="c-next-event-title"></ContentTitle>
+    <ContentTitle id="c-next-event-title" title="NEXT EVENT"></ContentTitle>
     <div class="c-banner">
       <p>バナー的な</p>
     </div>
@@ -10,16 +10,19 @@
     <div id="c-next-event-description">
       <description id="c-next-event-description-text"></description>
     </div>
-    <Button id="p-button"></Button>
+    <div id="c-next-event-button">
+    <Button text="参加する"></Button>
+    </div>
   </div>
 </template>
 <script>
-import ContentTitle from './content_title';
-import Button from './button';
-import Description from './description';
+import ContentTitle from './ContentTitle';
+import Button from './Button';
+import Description from './Description';
 
 export default {
   name: 'NextEvent',
+  props: ['title'],
   components: { Description, ContentTitle, Button },
 };
 </script>
@@ -30,19 +33,12 @@ export default {
     background-color: #0085B3;
   }
   #c-next-event-title {
-    color: white;
-    font-size: 18px;
+    font-size: 28px;
     position: absolute;
-    padding:0 1em 0 0.5em;
-    border-bottom: solid white 1px;
     top: -0.5em;
   }
-  #p-button {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1em;
-    margin: auto;
+  #c-next-event-button {
+    margin: 0em;
   }
   #c-next-event-date {
     text-align: right;
