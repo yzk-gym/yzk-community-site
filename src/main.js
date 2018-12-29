@@ -3,8 +3,10 @@
 import firebase from 'firebase';
 import Vue from 'vue';
 import router from './router';
-import Events from './components/Events';
 import Top from './Top';
+import App from './App';
+import Footer from './components/layouts/TopFooter';
+import AboutList from './AboutList';
 
 require('./assets/css/main.css');
 
@@ -24,14 +26,30 @@ firebase.initializeApp(config);
 /* eslint-disable no-new */
 
 new Vue({
-  el: '#events',
+  el: '#app',
   router,
-  components: { Events },
-  template: '<events/>',
+  components: { App },
+  template: '<App/>',
 });
-
 new Vue({
   el: '#top',
-  components: { Top },
+  components: {
+    Top,
+  },
   template: '<Top/>',
 });
+new Vue({
+  el: '#about-list',
+  components: {
+    AboutList,
+  },
+  template: '<AboutList/>',
+});
+new Vue({
+  el: '#footer',
+  components: {
+    Footer,
+  },
+  template: '<Footer/>',
+});
+
