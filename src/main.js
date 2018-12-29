@@ -2,22 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import router from './router';
-import Events from './components/events';
-import Top from './top';
+import App from './App';
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 
 /* eslint-disable no-new */
 
 new Vue({
-  el: '#events',
+  el: '#app',
   router,
-  components: { Events },
-  template: '<events/>',
-});
-
-new Vue({
-  el: '#top',
-  components: { Top },
-  template: '<top/>',
+  components: { App },
+  template: '<App/>',
 });

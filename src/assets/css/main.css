@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'yzk-font';
+  src: url("../font/logotypejp_mp_m_1.1.ttf");
+}
+
+@font-face {
+  font-family: 'yzk-font2';
+  src: url("../font/m_E887AAE794B1E7A094E7A9B6.jpg");
+}
+
+@font-face {
+  font-family: 'fututa';
+  src: url("../font/Futura-MedObl.otf");
+}
+
+span{
+  margin: .05em;
+}

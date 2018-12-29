@@ -1,14 +1,16 @@
 <template>
   <div id="app">
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Events from './components/events';
+import 'normalize.css';
+
+require('./assets/css/main.css');
 
 export default {
   name: 'App',
-  components: { Events },
 };
 </script>
 
