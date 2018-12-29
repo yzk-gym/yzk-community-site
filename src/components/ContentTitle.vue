@@ -19,7 +19,6 @@ export default{
     margin: 0;
     padding:0 1em 0 0.5em;
     font-family: 'fututa';
-    color: white;
     border-bottom: solid white 1px;
   }
 </style>
