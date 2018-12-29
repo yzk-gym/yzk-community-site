@@ -1,5 +1,6 @@
 <template>
   <div id="events">
+    <!--ザンさんがヘッダーつくったらはめる-->
     <section class="title-section">
       <content-title2 title="SCHEDULE"></content-title2>
       <p class="title-desctiption">
@@ -11,17 +12,20 @@
     </section>
     <event-list-view></event-list-view>
     <p class="comming-soon">coming soon...</p>
+    <top-footer></top-footer>
   </div>
 </template>
 <script>
 import ContentTitle2 from './components/ContentTitle2';
 import EventListView from './components/EventListView';
+import TopFooter from './components/layouts/TopFooter';
 
 export default {
   name: 'EventList',
   components: {
     EventListView,
     ContentTitle2,
+    TopFooter,
   },
 };
 </script>
