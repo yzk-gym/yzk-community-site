@@ -5,6 +5,7 @@ import router from './router';
 import Events from './components/Events';
 import Top from './top';
 import Footer from './components/layouts/Footer';
+import AboutList from '../AboutList';
 
 require('./assets/css/main.css');
 
@@ -15,17 +16,30 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#events',
   router,
-  components: { Events },
+  components: {
+    Events
+  },
   template: '<events/>',
 });
 
 new Vue({
   el: '#top',
-  components: { Top },
+  components: {
+    Top
+  },
   template: '<Top/>',
 });
 new Vue({
   el: '#footer',
-  components: { Footer },
+  components: {
+    Footer
+  },
   template: '<Footer/>',
 });
+new Vue({
+  el: '#footer',
+  components: {
+    Footer
+  },
+  template: '<Footer/>',
+})

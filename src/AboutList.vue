@@ -1,37 +1,5 @@
 <template>
-  <div id="top">
-    <logo></logo>
-    <next-event></next-event>
-    <div class="p-description">
-      <img src="./assets/img/cube_logo_white.svg" id="c-description-logo">
-      <content-title title="Welcome to YZKAMP!" id="c-description-title"></content-title>
-      <p>詳細を
-        <br>ここに
-        <br>かく
-      </p>
-      <read-more id="c-description-readmore">
-        <!-- <router-link to="/src/welcomeList.vue" tag="p"></router-link> -->
-      </read-more>
-    </div>
-    <div id="p-schedule">
-      <span></span>
-      <content-title title="SCHEDULE" id="c-schedule-title"></content-title>
-      <description v-bind:readmore="false" id="c-schedule-description"></description>
-      <div id="p-calendar">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=h5bgc3ilvdug7d7i8dfkgnuf8c%40group.calendar.google.com&ctz=Asia%2FTokyo"
-          style="border: 0"
-          width="800"
-          height="600"
-          frameborder="0"
-          scrolling="no"
-        ></iframe>
-      </div>
-      <div id="c-schedule-button">
-        <Button text="一覧を見る"></Button>
-      </div>
-    </div>
-  </div>
+  <content-title title="Welcome to YZKAMP!" id="c-description-title"></content-title>
 </template>
 <script>
 import "normalize.css";
