@@ -8,8 +8,6 @@ import App from './App';
 import Footer from './components/layouts/TopFooter';
 import AboutList from './AboutList';
 
-require('./assets/css/main.css');
-
 Vue.config.productionTip = true;
 // Initialize Firebase
 const config = {

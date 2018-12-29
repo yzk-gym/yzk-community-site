@@ -22,6 +22,7 @@ export default {
     background-color: #009ACC;
   }
   #c-footer-itemlist {
+    text-align: left;
     padding: 3em 0 0 0;
   }
   #c-footer-item {

@@ -18,7 +18,7 @@ export default {
 </script>
 <style>
   #p-description {
-    background-color: #EBEBEB;
+    width:80%;
   }
    #p-description-title{
      padding: 2em 0.5em 0;

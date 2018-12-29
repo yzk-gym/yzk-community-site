@@ -34,14 +34,13 @@
     <div id="p-past-events">
       <span></span>
       <content-title title="PAST EVENTs" id="c-past-events-title"></content-title>
-      <description  v-bind:readmore="false"></description>
-      <button></button>
+      <description  v-bind:readmore="false" id="c-past-events-description"></description>
+      <Button text="一覧を見る"></Button>
     </div>
     <top-footer></top-footer>
   </div>
 </template>
 <script>
-import 'normalize.css';
 import Logo from './components/Logo';
 import NextEvent from './components/NextEvent';
 import TopFooter from './components/layouts/TopFooter';
@@ -79,11 +78,14 @@ export default {
     background-color: #0085B3;
   }
   #c-schedule-title {
+    text-align: left;
+    margin-right: 50%;
     color: white;
     font-size: 34px;
   }
   #c-schedule-description {
-    margin: 1em 0 0 40%;
+    margin-left: 20%;
+    background-color: #EBEBEB;
   }
   #c-schedule-button {
     margin: 0em;
@@ -103,8 +105,15 @@ export default {
     background-color: #EBEBEB;
   }
   #c-past-events-title {
+    margin-left:30%;
+    text-align: right;
     color: #009ACC;
     border-bottom: solid #009ACC 2px !important;
     font-size: 30px;
+  }
+  #c-past-events-description {
+    margin-right: 20%;
+    color: white;
+    background-color: #009ACC;
   }
 </style>
