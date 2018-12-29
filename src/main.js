@@ -4,9 +4,7 @@ import Vue from 'vue';
 import router from './router';
 import App from './App';
 
-require('./assets/css/main.css');
-
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 
 /* eslint-disable no-new */
 

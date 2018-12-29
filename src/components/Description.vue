@@ -1,8 +1,8 @@
 <template>
-  <div id="p-description">
-    <p id="p-description-title">イベントタイトル</p>
-    <p id="p-description-text">イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細</p>
-    <read-more v-if="readmore"   id="c-description-readmore"></read-more>
+  <div class="p-description">
+    <p class="p-description-title">イベントタイトル</p>
+    <p class="p-description-text">イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細</p>
+    <read-more v-if="readmore"  class="c-description-readmore"></read-more>
   </div>
 </template>
 <script>
@@ -16,23 +16,23 @@ export default {
   },
 };
 </script>
-<style>
-  #p-description {
-    background-color: white;
+<style scoped>
+  .p-description {
+    margin-left: 20%;
   }
-   #p-description-title{
+   .p-description-title{
      padding: 2em 0.5em 0;
      text-align: left;
      color: black;
    }
-  #p-description-text{
+  .p-description-text{
     padding: 0.5em 0.5em;
     text-align: left;
     color: black;
   }
-  #c-description-readmore {
+  .c-description-readmore {
     margin: 0  0  0 60%;
     padding: 0.5em 1em 0.1em 0;
     color: #FF8A7D;
   }
-</style>
+</stylescoped>

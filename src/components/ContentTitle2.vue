@@ -1,26 +1,29 @@
 <template>
   <div class="p-content-text">
     <p class="c-content-title">{{ title }}</p>
+    <hr class="under-line">
   </div>
 </template>
 <script>
-export default{
-  name: 'ContentTitle',
+export default {
+  name: 'ContentTitle2',
   props: {
     title: { type: String, require: true },
   },
 };
 </script>
 <style scoped>
-  .p-content-text {
-    width:auto;
-  }
   .c-content-title {
-    margin: 0;
-    padding:0 1em 0 0.5em;
+    margin: 0 2em;
     font-family: 'fututa';
-    border-bottom: solid white 1px;
-    color: white;
+    padding-bottom: 0px;
+    color: #ffffff;
     font-size: 28px;
+    line-height: 1em;
+  }
+  .under-line {
+    margin: -4px 2.5em 0px;
+    padding: 0px 0px;
+    border-top: 1px solid #ffffff;
   }
 </style>
