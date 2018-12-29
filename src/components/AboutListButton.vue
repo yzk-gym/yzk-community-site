@@ -1,25 +1,24 @@
 <template>
-  <div id="p-button">
-    <p id="c-button-text">{{ text }}</p>
+  <div class="p-button">
+    <p class="c-button-text">{{ text }}</p>
   </div>
 </template>
 <script>
 export default {
-  name: "AboutListButton",
+  name: 'AboutListButton',
   props: {
-    text: { type: String, require: true }
-  }
+    text: { type: String, require: true },
+  },
 };
 </script>
-<style>
-#p-button {
-  margin: 0 4em;
+<style scoped>
+.p-button {
   background-color: #0085b3;
-  border-radius: 0.2em 0.2em 0.2em 0.2em;
   text-align: center;
 }
-#c-button-text {
-  padding: 0.5em;
+.c-button-text {
+	font-size: 12px;
+  padding: 0 4em;
   color: white;
 }
 </style>

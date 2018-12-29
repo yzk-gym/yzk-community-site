@@ -1,49 +1,50 @@
 <template>
   <div class="wrap">
     <div class="card">
-      <img src="../assets/img/about-list-icon01.svg" id="about-list-icon">
-      <p>▶︎オープンな秘密基地</p>
-      <read-more v-if="readmore" id="c-description-readmore"></read-more>
+      <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
+      <p class="card-title">▶︎オープンな秘密基地</p>
+      <read-more v-if="readmore" class="c-description-readmore"></read-more>
     </div>
     <div class="card">
-      <img src="../assets/img/about-list-icon02.svg" id="about-list-icon">
-      <p>▶︎クロスオーバー</p>
-      <read-more v-if="readmore" id="c-description-readmore"></read-more>
+      <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
+      <p class="card-title">▶︎クロスオーバー</p>
+      <read-more v-if="readmore" class="c-description-readmore"></read-more>
     </div>
     <div class="card">
-      <img src="../assets/img/about-list-icon03.svg" id="about-list-icon">
-      <p>▶︎楽しむためのレベル上げ</p>
-      <read-more v-if="readmore" id="c-description-readmore"></read-more>
+      <img src="../assets/img/about-list-icon03.svg" class="about-list-icon">
+      <p class="card-title">▶︎楽しむためのレベル上げ</p>
+      <read-more v-if="readmore" class="c-description-readmore"></read-more>
     </div>
     <div class="card">
-      <img src="../assets/img/about-list-icon04.svg" id="about-list-icon">
-      <p>▶︎楽しいをつくる</p>
-      <read-more v-if="readmore" id="c-description-readmore"></read-more>
+      <img src="../assets/img/about-list-icon04.svg" class="about-list-icon">
+      <p class="card-title">▶︎楽しいをつくる</p>
+      <read-more v-if="readmore" class="c-description-readmore"></read-more>
     </div>
     <div class="card">
-      <img src="../assets/img/about-list-icon05.svg" id="about-list-icon">
-      <p>▶︎「やってみたら楽しい」をやれる場所</p>
-      <read-more v-if="readmore" id="c-description-readmore"></read-more>
+      <img src="../assets/img/about-list-icon05.svg" class="about-list-icon">
+      <p class="card-title-exception">▶︎「やってみたら楽しい」をやれる場所</p>
+      <read-more v-if="readmore" class="c-description-readmore"></read-more>
     </div>
     <div class="card">
-      <img src="../assets/img/about-list-icon06.svg" id="about-list-icon">
-      <p>▶︎スマートなバカ</p>
-      <read-more v-if="readmore" id="c-description-readmore"></read-more>
+      <img src="../assets/img/about-list-icon06.svg" class="about-list-icon">
+      <p class="card-title">▶︎スマートなバカ</p>
+      <read-more v-if="readmore" class="c-description-readmore"></read-more>
     </div>
   </div>
 </template>
 <script>
-import ReadMore from "../components/ReadMore";
+import ReadMore from '../components/ReadMore';
+
 export default {
-  name: "AboutListCard",
+  name: 'AboutListCard',
   components: { ReadMore },
   props: {
-    readmore: { type: Boolean, default: true }
-  }
+    readmore: { type: Boolean, default: true },
+  },
 };
 </script>
-<style>
-#about-list-icon {
+<style scoped>
+.about-list-icon {
   margin-top: 1em;
   width: 70%;
 }
@@ -63,9 +64,25 @@ export default {
   position: relative;
   margin: 0.3em;
   width: 10.5em;
-  height: 14em;
+  height: 15em;
 }
-#c-description-readmore {
+.card-title {
+	margin-top: 16px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ff8a7d;
+	line-height: 24px;
+	letter-spacing: 1px;
+}
+.card-title-exception {
+	margin-top: 8px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ff8a7d;
+	line-height: 16px;
+	letter-spacing: 1px;
+}
+.c-description-readmore {
   color: #ff8a7d;
   margin: 0 1.5em;
 }

@@ -1,64 +1,67 @@
 <template>
   <div id="about-list">
-    <content-title title="Welcome to YZKAMP!" id="c-description-title"></content-title>
-    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-    <div id="about-list-card">
+    <content-title title="Welcome to YZKAMP!" class="c-description-title"></content-title>
+    <p class="title-description">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <div class="about-list-card">
       <about-list-card></about-list-card>
     </div>
     <div>
-      <p>参加してみたくなったら
+      <p class="invite-text">参加してみたくなったら
         <br>一緒に遊ぼう！
       </p>
     </div>
-    <div id="c-about-list-button">
-      <AboutListButton text="◀イベント一覧を見る"></AboutListButton>
-    </div>
+		<div>
+      <AboutListButton class="about-list-button" text="◀イベント一覧を見る"></AboutListButton>
+		</div>
+    <top-footer></top-footer>
   </div>
 </template>
 <script>
-import "normalize.css";
-import Logo from "./components/Logo";
-import NextEvent from "./components/NextEvent";
-import Footer from "./components/layouts/Footer";
-import ContentTitle from "./components/ContentTitle";
-import ReadMore from "./components/ReadMore";
-import Description from "./components/Description";
-import AboutListButton from "./components/AboutListButton";
-import AboutListCard from "./components/AboutListCard";
+import TopFooter from './components/layouts/TopFooter';
+import ContentTitle from './components/ContentTitle';
+import AboutListButton from './components/AboutListButton';
+import AboutListCard from './components/AboutListCard';
 
 export default {
-  name: "AboutList",
+  name: 'AboutList',
   components: {
     AboutListButton,
-    Description,
-    ReadMore,
     ContentTitle,
-    Footer,
-    NextEvent,
-    Logo,
+    TopFooter,
     AboutListCard
-  }
+  },
 };
 </script>
-<style>
+<style scoded>
 #about-list {
   width: 100vw;
   background-color: #009acc;
 }
-.p-description {
-  text-align: center;
-}
-#c-description-logo {
-  margin: 0.5em;
-  width: 4em;
-}
-#c-description-title {
-  margin: 0 1.5em;
+.c-description-title {
   font-size: 22px;
-  padding: 2em 0;
+	margin: 0 1.5em;
+  padding-top: 1em;
+	padding-bottom: 0.5em;
 }
-#c-description-readmore {
-  margin: 0;
-  color: white;
+.title-description {
+	margin-top: 16px;
+	font-family: "yzk-font";
+	font-size: 13px;
+	font-weight: bold;
+	color: #ffffff;
+	line-height: 24px;
+	letter-spacing: 1px;
+}
+.invite-text {
+	margin: 1.3em 0;
+	font-family: "yzk-font";
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffffff;
+	line-height: 32px;
+	letter-spacing: 2px;
+}
+.about-list-button {
+	float: left;
 }
 </style>
