@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Top from '../top';
+import Top from '../Top';
 import AboutList from '../AboutList';
 
 Vue.use(Router);

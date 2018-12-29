@@ -31,46 +31,27 @@
         <Button text="一覧を見る"></Button>
       </div>
     </div>
+    <div id="p-past-events">
+      <span></span>
+      <content-title title="PAST EVENTs" id="c-past-events-title"></content-title>
+      <description  v-bind:readmore="false" id="c-past-events-description"></description>
+      <Button text="一覧を見る"></Button>
+    </div>
+    <top-footer></top-footer>
   </div>
 </template>
 <script>
-import "normalize.css";
-import Logo from "./components/Logo";
-import NextEvent from "./components/NextEvent";
-import Footer from "./components/layouts/Footer";
-import ContentTitle from "./components/ContentTitle";
-import ReadMore from "./components/ReadMore";
-import Description from "./components/Description";
-import Button from "./components/Button";
+import Logo from './components/Logo';
+import NextEvent from './components/NextEvent';
+import TopFooter from './components/layouts/TopFooter';
+import ContentTitle from './components/ContentTitle';
+import ReadMore from './components/ReadMore';
+import Description from './components/Description';
+import Button from './components/Button';
 
 export default {
-  components: {
-    Button,
-    Description,
-    ReadMore,
-    ContentTitle,
-    Footer,
-    NextEvent,
-    Logo
-  }
+  components: { Button, Description, ReadMore, ContentTitle, TopFooter, NextEvent, Logo },
 };
-</script>
-<script>
-  const firebase = require("firebase");
-  require("firebase/firestore");
-  firebase.initializeApp({
-    apiKey: 'AIzaSyBVnRCHYWucag-ovMvMlEYwuRMAkBaoId4',
-    authDomain: 'yzk-community-site.firebaseapp.com',
-    projectId: 'yzk-community-site'
-  });
-  var db = firebase.firestore()
-  const settings = {timestampsInSnapshots: true};
-  db.settings(settings);
-  db.collection("events").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      console.log(doc['_document']['proto']['fields'])
-    })
-  })
 </script>
 <style>
 #top {
