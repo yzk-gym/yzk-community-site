@@ -11,7 +11,7 @@ export default{
   },
 };
 </script>
-<style>
+<style scoped>
   .p-content-text {
     width:auto;
   }
