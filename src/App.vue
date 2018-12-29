@@ -1,14 +1,13 @@
 <template>
   <div id="app">
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Events from './components/events';
 
 export default {
   name: 'App',
-  components: { Events },
 };
 </script>
 
