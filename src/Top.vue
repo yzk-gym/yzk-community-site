@@ -64,7 +64,6 @@
 </template>
 <script>
 import Logo from './components/Logo';
-import NextEvent from './components/NextEvent';
 import TopFooter from './components/layouts/TopFooter';
 import ContentTitle from './components/ContentTitle';
 import ReadMore from './components/ReadMore';
@@ -73,6 +72,6 @@ import Description from './components/Description';
 import HamburgerMenu from './components/layouts/HamburgerMenu';
 
 export default {
-  components: { HamburgerMenu, Button, ReadMore, ContentTitle, TopFooter, NextEvent, Logo, Description },
+  components: { HamburgerMenu, Button, ReadMore, ContentTitle, TopFooter, Logo, Description },
 };
 </script>

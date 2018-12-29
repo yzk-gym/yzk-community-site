@@ -16,7 +16,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
   .p-description {
     margin-left: 20%;
   }
@@ -35,4 +35,4 @@ export default {
     padding: 0.5em 1em 0.1em 0;
     color: #FF8A7D;
   }
-</style>
+</stylescoped>

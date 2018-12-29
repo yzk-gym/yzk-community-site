@@ -8,7 +8,7 @@ export default{
   name: 'ReadMore',
 };
 </script>
-<style>
+<style scoped>
   .p-readmore {
     padding-bottom: 0.2em;
   }

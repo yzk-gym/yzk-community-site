@@ -10,7 +10,7 @@ export default {
   name: 'HamburgerMenu',
 };
 </script>
-<style>
+<style scoped>
   .c-menu-line {
     border-bottom: solid black 0.1em;
   }
