@@ -1,7 +1,23 @@
 <template>
   <div class="top">
     <logo></logo>
-    <next-event></next-event>
+    <hamburger-menu></hamburger-menu>
+    <div class="p-next-event">
+      <ContentTitle class="c-next-event-title" title="NEXT EVENT"></ContentTitle>
+      <div class="c-banner">
+        <p>バナー的な</p>
+      </div>
+      <div class="c-next-event-date">
+        <p class="c-next-event-date-text">12/30<br>SUN.</p>
+      </div>
+      <div class="c-next-event-description">
+        <description class="c-next-event-description-text"></description>
+      </div>
+      <div class="c-next-event-button">
+        <Button text="参加する"></Button>
+      </div>
+      <span></span>
+    </div>
     <div class="p-lead">
       <img src="./assets/img/cube_logo_white.svg" class="c-lead-logo">
       <content-title title="Welcome to YZKAMP!" class="c-lead-title"></content-title>
@@ -16,7 +32,7 @@
     <div class="p-schedule">
       <span></span>
       <content-title title="SCHEDULE" class="c-schedule-title"></content-title>
-      <description v-bind:readmore="false" class="c-schedule-description"></description>
+      <Description v-bind:readmore="false" class="c-schedule-description"></Description>
       <div class="p-calendar">
         <iframe
           src="https://calendar.google.com/calendar/embed?src=h5bgc3ilvdug7d7i8dfkgnuf8c%40group.calendar.google.com&ctz=Asia%2FTokyo"
@@ -33,10 +49,12 @@
     </div>
     <div class="p-past-events">
       <span></span>
-      <content-title title="PAST EVENTs" class="c-past-events-title"></content-title>
+        <p class="c-past-events-title">PAST EVENTs</p>
         <div class="c-past-events-description">
           <p class="c-past-events-description-title">イベントタイトル</p>
-          <p class="c-past-events-description-text">イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細</p>
+          <p class="c-past-events-description-text">
+            イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細
+          </p>
       </div>
       <Button text="一覧を見る"></Button>
       <span></span>
@@ -51,8 +69,10 @@ import TopFooter from './components/layouts/TopFooter';
 import ContentTitle from './components/ContentTitle';
 import ReadMore from './components/ReadMore';
 import Button from './components/Button';
+import Description from './components/Description';
+import HamburgerMenu from './components/layouts/HamburgerMenu';
 
 export default {
-  components: { Button, ReadMore, ContentTitle, TopFooter, NextEvent, Logo },
+  components: { HamburgerMenu, Button, ReadMore, ContentTitle, TopFooter, NextEvent, Logo, Description },
 };
 </script>

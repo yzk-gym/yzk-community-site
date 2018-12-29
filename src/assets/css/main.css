@@ -23,6 +23,49 @@ span{
   width: 100vw;
   background-color: #009ACC;
 }
+
+.p-next-event{
+  position: relative;
+  height:auto;
+  background-color: #0085B3;
+}
+.c-next-event-title {
+  color: white;
+  font-size: 28px;
+  position: absolute;
+  top: -0.5em;
+}
+.c-next-event-button {
+  margin: 0em;
+}
+.c-next-event-date {
+  text-align: right;
+  z-index: 100;
+}
+.c-next-event-date-text{
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  color: white;
+  font-size: 34px;
+}
+.c-banner{
+  position: absolute;
+  height: 35%;
+  width: 80%;
+  top: 2em;
+  left: 0;
+  background-color: lightgray;
+  z-index: 0;
+}
+.c-next-event-description {
+  padding: 40% 0 0 0;
+  text-align: center;
+}
+.c-next-event-description-text {
+  background-color: #EBEBEB;
+}
+
 .p-lead {
   text-align: center;
 }
@@ -68,11 +111,17 @@ span{
   background-color: #EBEBEB;
 }
 .c-past-events-title {
-  margin-left:30%;
+
+}
+
+.c-past-events-title{
+  margin: 0 0 0 30%;
+  padding-right: 1em;
   text-align: right;
   color: #009ACC;
-  border-bottom: solid #009ACC 2px !important;
-  font-size: 30px;
+  border-bottom: solid #009ACC 2px;
+  font-family: 'fututa';
+  font-size: 28px;
 }
 .c-past-events-description {
   margin-right: 20%;
