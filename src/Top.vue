@@ -72,7 +72,6 @@ export default {
   }
   #c-schedule-description {
     margin: 1em 0 0 40%;
-    background-color: white;
   }
   #c-schedule-button {
     margin: 0em;
@@ -93,6 +92,7 @@ export default {
   }
   #c-past-events-title {
     color: #009ACC;
+    border-bottom: solid #009ACC 2px !important;
     font-size: 30px;
   }
 </style>

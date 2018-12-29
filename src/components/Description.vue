@@ -2,7 +2,7 @@
   <div id="p-description">
     <p id="p-description-title">イベントタイトル</p>
     <p id="p-description-text">イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細</p>
-    <read-more v-if="readmore"   id="c-description-readmore"></read-more>
+    <read-more v-if="readmore"  id="c-description-readmore"></read-more>
   </div>
 </template>
 <script>
