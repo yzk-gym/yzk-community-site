@@ -9,7 +9,7 @@ export default {
   name: 'Logo',
 };
 </script>
-<style>
+<style scoped>
   .p-logo{
     height: 150px;
     text-align: center;

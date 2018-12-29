@@ -11,7 +11,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
   .p-button {
     margin: 0 4em;
     background-color: #FF8A7D;
