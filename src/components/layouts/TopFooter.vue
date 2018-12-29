@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: 'Footer',
+  name: 'TopFooter',
 };
 </script>
 <style>
