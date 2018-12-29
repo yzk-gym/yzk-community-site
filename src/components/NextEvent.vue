@@ -1,16 +1,16 @@
 <template>
-  <div id="p-next-event">
-    <ContentTitle id="c-next-event-title" title="NEXT EVENT"></ContentTitle>
+  <div class="p-next-event">
+    <ContentTitle class="c-next-event-title" title="NEXT EVENT"></ContentTitle>
     <div class="c-banner">
       <p>バナー的な</p>
     </div>
-    <div id="c-next-event-date">
-      <p id="c-next-event-date-text">12/30<br>SUN.</p>
+    <div class="c-next-event-date">
+      <p class="c-next-event-date-text">12/30<br>SUN.</p>
     </div>
-    <div id="c-next-event-description">
-      <description id="c-next-event-description-text"></description>
+    <div class="c-next-event-description">
+      <description class="c-next-event-description-text"></description>
     </div>
-    <div id="c-next-event-button">
+    <div class="c-next-event-button">
     <Button text="参加する"></Button>
     </div>
   </div>
@@ -27,25 +27,25 @@ export default {
 };
 </script>
 <style>
-  #p-next-event{
+  .p-next-event{
     position: relative;
-    height:500px;
+    height:auto;
     background-color: #0085B3;
   }
-  #c-next-event-title {
+  .c-next-event-title {
     color: white;
     font-size: 28px;
     position: absolute;
     top: -0.5em;
   }
-  #c-next-event-button {
+  .c-next-event-button {
     margin: 0em;
   }
-  #c-next-event-date {
+  .c-next-event-date {
     text-align: right;
     z-index: 100;
   }
-  #c-next-event-date-text{
+  .c-next-event-date-text{
     position: absolute;
     top: 0.5em;
     right: 1em;
@@ -61,11 +61,11 @@ export default {
     background-color: lightgray;
     z-index: 0;
   }
-  #c-next-event-description {
-    padding:45% 0 0 20%;
+  .c-next-event-description {
+    padding:45% 0 0 0;
     text-align: center;
   }
-  #c-next-event-description-text {
+  .c-next-event-description-text {
     background-color: #EBEBEB;
   }
 </style>

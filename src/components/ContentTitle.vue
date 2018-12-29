@@ -1,6 +1,6 @@
 <template>
-  <div id="p-content-text">
-    <p id="c-content-title">{{ title }}</p>
+  <div class="p-content-text">
+    <p class="c-content-title">{{ title }}</p>
   </div>
 </template>
 <script>
@@ -12,13 +12,15 @@ export default{
 };
 </script>
 <style>
-  #p-content-text {
+  .p-content-text {
     width:auto;
   }
-  #c-content-title {
+  .c-content-title {
     margin: 0;
     padding:0 1em 0 0.5em;
     font-family: 'fututa';
     border-bottom: solid white 1px;
+    color: white;
+    font-size: 28px;
   }
 </style>
