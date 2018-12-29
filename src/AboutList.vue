@@ -11,7 +11,7 @@
       </p>
     </div>
     <div id="c-about-list-button">
-      <AboutListButton text="◀︎イベント一覧を見る"></AboutListButton>
+      <AboutListButton text="◀イベント一覧を見る"></AboutListButton>
     </div>
   </div>
 </template>
@@ -60,7 +60,5 @@ export default {
 #c-description-readmore {
   margin: 0;
   color: white;
-}
-#c-about-list-button {
 }
 </style>
