@@ -55,6 +55,24 @@ export default {
   }
 };
 </script>
+<script>
+  const firebase = require("firebase");
+  require("firebase/firestore");
+  firebase.initializeApp({
+    apiKey: 'AIzaSyBVnRCHYWucag-ovMvMlEYwuRMAkBaoId4',
+    authDomain: 'yzk-community-site.firebaseapp.com',
+    projectId: 'yzk-community-site'
+  });
+    
+  var db = firebase.firestore()
+  const settings = {timestampsInSnapshots: true};
+  db.settings(settings);
+  db.collection("events").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(doc)
+    })
+  })
+</script>
 <style>
 #top {
   width: 100vw;
