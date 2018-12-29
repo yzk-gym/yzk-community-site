@@ -1,9 +1,10 @@
-<Header></Header>
 <template>
-  <div></div>
+  <div>
+    <p>テスト</p>
+  </div>
 </template>
 <script>
-import Header from './/layouts/header';
+import Header from './/layouts/Header';
 
 export default {
   name: 'events',

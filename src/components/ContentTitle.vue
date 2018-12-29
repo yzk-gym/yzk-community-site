@@ -1,11 +1,14 @@
 <template>
   <div id="p-content-text">
-    <p id="c-content-title">NEXT EVENT</p>
+    <p id="c-content-title">{{ title }}</p>
   </div>
 </template>
 <script>
 export default{
   name: 'ContentTitle',
+  props: {
+    title: { type: String, require: true },
+  },
 };
 </script>
 <style>
@@ -14,6 +17,9 @@ export default{
   }
   #c-content-title {
     margin: 0;
-    font-family: "Al Nile";
+    padding:0 1em 0 0.5em;
+    font-family: 'fututa';
+    color: white;
+    border-bottom: solid white 1px;
   }
 </style>

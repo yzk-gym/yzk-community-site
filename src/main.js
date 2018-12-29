@@ -2,8 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import router from './router';
-import Events from './components/events';
+import Events from './components/Events';
 import Top from './top';
+import Footer from './components/layouts/Footer';
+
+require('./assets/css/main.css');
 
 Vue.config.productionTip = false;
 
@@ -19,5 +22,10 @@ new Vue({
 new Vue({
   el: '#top',
   components: { Top },
-  template: '<top/>',
+  template: '<Top/>',
+});
+new Vue({
+  el: '#footer',
+  components: { Footer },
+  template: '<Footer/>',
 });

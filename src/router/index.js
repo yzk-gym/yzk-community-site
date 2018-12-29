@@ -1,18 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
-import Events from '../components/events';
-import Logo from '../components/logo';
+import Events from '../components/Events';
+import Top from '../top';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
-    },
     {
       path: '/events',
       name: 'Events',
@@ -20,8 +14,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Logo',
-      component: Logo,
+      name: 'Top',
+      component: Top,
     },
   ],
 });
