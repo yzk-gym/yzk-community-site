@@ -13,3 +13,6 @@
   src: url("../font/Futura-MedObl.otf");
 }
 
+span{
+  margin: .05em;
+}

@@ -9,7 +9,8 @@
       <read-more id="c-description-readmore"></read-more>
     </div>
     <div id="p-schedule">
-      <content-title title="SCHEDULES" id="c-schedule-title"></content-title>
+      <span></span>
+      <content-title title="SCHEDULE" id="c-schedule-title"></content-title>
       <description v-bind:readmore="false" id="c-schedule-description"></description>
       <div id="p-calendar">
         <iframe src="https://calendar.google.com/calendar/embed?src=h5bgc3ilvdug7d7i8dfkgnuf8c%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
@@ -58,7 +59,7 @@ export default {
     background-color: #0085B3;
   }
   #c-schedule-title {
-    font-size: 22px;
+    font-size: 34px;
   }
   #c-schedule-description {
     margin: 1em 0 0 40%;

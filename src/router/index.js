@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Events from '../components/Events';
-import Logo from '../components/Logo';
+import Top from '../top';
 
 Vue.use(Router);
 
@@ -14,8 +14,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Logo',
-      component: Logo,
+      name: 'Top',
+      component: Top,
     },
   ],
 });
