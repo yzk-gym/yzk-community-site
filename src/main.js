@@ -3,9 +3,6 @@
 import Vue from 'vue';
 import router from './router';
 import App from './App';
-import Top from './top';
-import Footer from './components/layouts/Footer';
-import AboutList from './AboutList';
 
 require('./assets/css/main.css');
 
@@ -18,25 +15,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
-});
-new Vue({
-  el: '#top',
-  components: {
-    Top,
-  },
-  template: '<Top/>',
-});
-new Vue({
-  el: '#about-list',
-  components: {
-    AboutList,
-  },
-  template: '<AboutList/>',
-});
-new Vue({
-  el: '#footer',
-  components: {
-    Footer,
-  },
-  template: '<Footer/>',
 });
