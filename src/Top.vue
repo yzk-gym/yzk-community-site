@@ -19,20 +19,27 @@
         <Button text="一覧を見る"></Button>
       </div>
     </div>
+    <div id="p-past-events">
+      <span></span>
+      <content-title title="PAST EVENTs" id="c-past-events-title"></content-title>
+      <description  v-bind:readmore="false"></description>
+      <button></button>
+    </div>
+    <top-footer></top-footer>
   </div>
 </template>
 <script>
 import 'normalize.css';
 import Logo from './components/Logo';
 import NextEvent from './components/NextEvent';
-import Footer from './components/layouts/Footer';
+import TopFooter from './components/layouts/TopFooter';
 import ContentTitle from './components/ContentTitle';
 import ReadMore from './components/ReadMore';
 import Description from './components/Description';
 import Button from './components/Button';
 
 export default {
-  components: { Button, Description, ReadMore, ContentTitle, Footer, NextEvent, Logo },
+  components: { Button, Description, ReadMore, ContentTitle, TopFooter, NextEvent, Logo },
 };
 </script>
 <style>
@@ -48,6 +55,7 @@ export default {
     width:4em;
   }
   #c-description-title {
+    color: white;
     margin: 0 2em;
     font-size: 22px;
   }
@@ -59,6 +67,7 @@ export default {
     background-color: #0085B3;
   }
   #c-schedule-title {
+    color: white;
     font-size: 34px;
   }
   #c-schedule-description {
@@ -78,5 +87,12 @@ export default {
     .googleCalendar iframe {
       height: 600px;
     }
+  }
+  #p-past-events {
+    background-color: #EBEBEB;
+  }
+  #c-past-events-title {
+    color: #009ACC;
+    font-size: 30px;
   }
 </style>

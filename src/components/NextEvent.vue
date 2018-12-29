@@ -33,6 +33,7 @@ export default {
     background-color: #0085B3;
   }
   #c-next-event-title {
+    color: white;
     font-size: 28px;
     position: absolute;
     top: -0.5em;
@@ -65,6 +66,6 @@ export default {
     text-align: center;
   }
   #c-next-event-description-text {
-    background-color: white;
+    background-color: #EBEBEB;
   }
 </style>

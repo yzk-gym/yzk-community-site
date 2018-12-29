@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Events from '../components/Events';
-import Top from '../top';
+import Top from '../Top';
 
 Vue.use(Router);
 
