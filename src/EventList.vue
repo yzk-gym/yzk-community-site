@@ -10,6 +10,7 @@
       </p>
     </section>
     <event-list-view></event-list-view>
+    <p class="comming-soon">coming soon...</p>
   </div>
 </template>
 <script>
@@ -42,5 +43,14 @@ export default {
     color: #ffffff;
     line-height: 24px;
     letter-spacing: 1px;
+  }
+  .comming-soon {
+    font-family: 'fututa';
+    background-color: #ffffff;
+    font-size: 30px;
+    color: #009acc;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
   }
 </style>
