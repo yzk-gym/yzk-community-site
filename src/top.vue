@@ -63,13 +63,12 @@ export default {
     authDomain: 'yzk-community-site.firebaseapp.com',
     projectId: 'yzk-community-site'
   });
-    
   var db = firebase.firestore()
   const settings = {timestampsInSnapshots: true};
   db.settings(settings);
   db.collection("events").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      console.log(doc)
+      console.log(doc['_document']['proto']['fields'])
     })
   })
 </script>
