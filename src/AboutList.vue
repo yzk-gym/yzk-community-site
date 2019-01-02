@@ -44,7 +44,7 @@ export default {
 	padding-bottom: 0.5em;
 }
 .title-description {
-	margin-top: 16px;
+	margin: 1.5em 2em;
 	font-family: "yzk-font";
 	font-size: 13px;
 	font-weight: bold;
