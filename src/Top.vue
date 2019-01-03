@@ -31,10 +31,11 @@
         <br>ここに
         <br>かく
       </p>
-      <read-more class="c-description-readmore">
-        <!-- <router-link to="/src/welcomeList.vue" tag="p"></router-link> -->
-      </read-more>
+      <div class="c-description-readmore">
+        <white-read-more></white-read-more>
+      </div>
     </div>
+    <!-- イベントスケジュールを表示するセクション。googleカレンダーを埋め込むのがイケてないので一旦非表示。
     <div class="p-schedule">
       <span></span>
       <content-title title="SCHEDULE" class="c-schedule-title"></content-title>
@@ -53,6 +54,7 @@
         <Button text="一覧を見る"></Button>
       </div>
     </div>
+    -->
     <div class="p-past-events">
       <span></span>
         <p class="c-past-events-title">PAST EVENTs</p>
@@ -76,45 +78,20 @@ import ReadMore from './components/ReadMore';
 import Button from './components/Button';
 import Description from './components/Description';
 import HamburgerMenu from './components/layouts/HamburgerMenu';
+import WhiteReadMore from './components/WhiteReadMore';
 
 export default {
-  components: { HamburgerMenu, Button, ReadMore, ContentTitle, TopFooter, Logo, Description },
+  components: { WhiteReadMore,
+    HamburgerMenu,
+    Button,
+    ReadMore,
+    ContentTitle,
+    TopFooter,
+    Logo,
+    Description },
 };
 </script>
 <style>
-#top {
-  width: 100vw;
-  background-color: #009acc;
-}
-.p-description {
-  text-align: center;
-}
-#c-description-logo {
-  margin: 0.5em;
-  width: 4em;
-}
-#c-description-title {
-  margin: 0 2em;
-  font-size: 22px;
-}
-#c-description-readmore {
-  margin: 0;
-  color: white;
-}
-#p-schedule {
-  background-color: #0085b3;
-}
-#c-schedule-title {
-  font-size: 34px;
-}
-#c-schedule-description {
-  margin: 1em 0 0 40%;
-  background-color: white;
-}
-#c-schedule-button {
-  margin: 0em;
-  padding: 1em;
-}
 #p-calendar iframe {
   margin: 0 10%;
   max-width: 80%;
