@@ -1,6 +1,6 @@
 <template>
   <section class="event-list-section">
-    <event-item
+    <past-event-item
       v-for="item in EventListItems"
       v-bind:key="item.id"
       :title=item.title
@@ -9,18 +9,18 @@
       :image_path=item.image_path
       :description=item.description
       :link_url=item.link_url>
-    </event-item>
+    </past-event-item>
   </section>
 </template>
 
 <script>
 import firebase from 'firebase';
-import EventItem from './EventItem';
+import PastEventItem from './PastEventItem';
 import firestore from '../assets/javascript/firebase';
 
 export default {
-  name: 'EventListView',
-  components: { EventItem },
+  name: 'PastEventListView',
+  components: { PastEventItem },
   data() {
     return {
       EventListItems: [], // API経由で取得するため空で初期化する
@@ -28,7 +28,7 @@ export default {
   },
   created() {
     this.EventListItems = [];
-    firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).get().then((querySnapshot) => {
+    firestore.collection('events').where('begin_datetime', '<=', this.getNowFormattedFirebase()).get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         this.EventListItems.push(
           {
@@ -38,7 +38,7 @@ export default {
             time: this.fromTimeStampToTime(doc.data().begin_datetime),
             image_path: `/static/img/${doc.data().image_path}`,
             description: `${doc.data().description}`,
-            link_url: doc.data().link_url,
+            link_url: doc.data().report_link_url,
           });
       });
     });

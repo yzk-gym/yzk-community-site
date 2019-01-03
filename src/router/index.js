@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Top from '../Top';
 import AboutList from '../AboutList';
 import EventList from '../EventList';
+import PastEventList from '../PastEventList';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/events',
       name: 'EventList',
       component: EventList,
+    },
+    {
+      path: '/past_events',
+      name: 'PastEventList',
+      component: PastEventList,
     },
   ],
 });
