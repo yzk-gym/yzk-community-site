@@ -2,10 +2,10 @@
   <div class="p-footer">
     <nav class="c-footer-itemlist">
       <ul class="c-footer-item">
-        <li><p>- TOPページ</p></li>
-        <li><p>- YZKAMPへようこそ</p></li>
-        <li><p>- 今後の開催予定イベント一覧</p></li>
-        <li><p>- 過去の開催イベント</p></li>
+        <li><p><router-link to="/">- TOPページ</router-link></p></li>
+        <li><p><router-link to="/about">- YZKAMPへようこそ</router-link></p></li>
+        <li><p><router-link to="/events">- 今後の開催予定イベント一覧</router-link></p></li>
+        <li><p><router-link to="/past_events">- 過去の開催イベント</router-link></p></li>
       </ul>
     </nav>
     <p class="c-footer-copyright">©︎YZKAMP</p>
@@ -33,5 +33,9 @@ export default {
     color: white;
     margin: 0 0;
     padding: 2em;
+  }
+  a {
+    text-decoration: none;
+    color: #ffffff;
   }
 </style>
