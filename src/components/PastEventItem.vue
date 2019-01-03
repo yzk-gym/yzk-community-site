@@ -15,9 +15,10 @@
       </div>
     </div>
     <div class="event-entry">
-      <a :href=link_url target="_blank">
-        <EventListEntryButton text="参加する"></EventListEntryButton>
+      <a v-show="link_url != ''" :href=link_url target="_blank">
+        <EventListEntryButton v-show="link_url != ''" text="レポートを見る"></EventListEntryButton>
       </a>
+      <span v-show="link_url == ''" class="no-report">このイベントの開催レポートはありません</span>
     </div>
   </div>
 </template>
@@ -27,7 +28,7 @@ import EventListEntryButton from './EventListEntryButton';
 
 export default {
   name: 'EventItem',
-  components: {EventListEntryButton },
+  components: { EventListEntryButton },
   props: {
     title: { type: String, require: true },
     day: { type: String, require: true },
@@ -43,7 +44,7 @@ export default {
   .event-item {
     background-color: #ebebeb;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     margin-bottom: 20px;
   }
   a {
@@ -51,6 +52,10 @@ export default {
   }
   .text-link {
     color: #FF8A7D;
+  }
+  .no-report {
+    color: #FF8A7D;
+    font-weight: bold;
   }
   .event-title {
     font-size: 18px;

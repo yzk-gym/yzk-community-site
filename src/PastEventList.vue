@@ -2,28 +2,26 @@
   <div id="events">
     <!--ザンさんがヘッダーつくったらはめる-->
     <section class="title-section">
-      <content-title2 title="SCHEDULE"></content-title2>
+      <content-title2 title="PAST EVENTs"></content-title2>
       <p class="title-desctiption">
-        柚希ジムの今後のイベント開催リストです。<br>
-        やってみたいものがあったら、<br>
-        気軽に参加してみよう！<br>
-        過去の開催イベントは<router-link to="/past_events" class="text-link">こちら</router-link>
+        柚希ジムの過去のイベント開催リストです。<br>
+        開催レポートが読めます。<br>
+        今後の開催イベントは<router-link to="/events" class="text-link">こちら</router-link>
       </p>
     </section>
-    <event-list-view></event-list-view>
-    <p class="coming-soon">coming soon...</p>
+    <past-event-list-view></past-event-list-view>
     <top-footer></top-footer>
   </div>
 </template>
 <script>
 import ContentTitle2 from './components/ContentTitle2';
-import EventListView from './components/EventListView';
+import PastEventListView from './components/PastEventListView';
 import TopFooter from './components/layouts/TopFooter';
 
 export default {
-  name: 'EventList',
+  name: 'PastEventList',
   components: {
-    EventListView,
+    PastEventListView,
     ContentTitle2,
     TopFooter,
   },
