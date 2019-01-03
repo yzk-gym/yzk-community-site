@@ -2,8 +2,8 @@
   <div class="event-item">
     <p class="event-title">{{ title }}</p>
     <ul class="event-datetime">
-      <li class="day"><strong>▶day</strong> {{ day }}</li>
-      <li><strong>▶time</strong> {{ time }} START</li>
+      <li class="day"><strong>▶︎day</strong> {{ day }}</li>
+      <li><strong>▶︎time</strong> {{ time }} START</li>
     </ul>
     <div class="event-sub">
       <div class="event-image-div">
