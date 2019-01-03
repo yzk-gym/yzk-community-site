@@ -67,20 +67,20 @@ export default {
   height: 15em;
 }
 .card-title {
-	margin-top: 16px;
-	font-size: 12px;
-	font-weight: bold;
-	color: #ff8a7d;
-	line-height: 24px;
-	letter-spacing: 1px;
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff8a7d;
+  line-height: 24px;
+  letter-spacing: 1px;
 }
 .card-title-exception {
-	margin-top: 8px;
-	font-size: 12px;
-	font-weight: bold;
-	color: #ff8a7d;
-	line-height: 16px;
-	letter-spacing: 1px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff8a7d;
+  line-height: 16px;
+  letter-spacing: 1px;
 }
 .c-description-readmore {
   color: #ff8a7d;
