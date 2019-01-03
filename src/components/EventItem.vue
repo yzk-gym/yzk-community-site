@@ -12,7 +12,7 @@
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
         <a :href=link_url class="text-link" target="_blank">
-          <p class="event-read-more">　READ MORE　　</p>
+          <p class="event-read-more"> &nbsp;READ MORE &nbsp; &nbsp;</p>
         </a>
       </div>
     </div>
@@ -29,7 +29,7 @@ import EventListEntryButton from './EventListEntryButton';
 
 export default {
   name: 'EventItem',
-  components: {EventListEntryButton },
+  components: { EventListEntryButton },
   props: {
     title: { type: String, require: true },
     day: { type: String, require: true },
