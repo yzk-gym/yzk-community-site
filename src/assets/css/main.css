@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'yzk-font';
-  src: url("../font/logotypejp_mp_m_1.1.ttf");
+  src: url("../../../static/font/logotypejp_mp_m_1.1.ttf");
 }
 
 @font-face {
   font-family: 'yzk-font2';
-  src: url("../font/m_E887AAE794B1E7A094E7A9B6.jpg");
+  src: url("../../../static/font/m_E887AAE794B1E7A094E7A9B6.jpg");
 }
 
 @font-face {
   font-family: 'fututa';
-  src: url("../font/Futura-MedObl.otf");
+  src: url("../../../static/font/Futura-MedObl.otf");
 }
 
 span{

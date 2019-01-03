@@ -14,10 +14,13 @@
         <p>バナー的な</p>
       </div>
       <div class="c-next-event-date">
-        <p class="c-next-event-date-text">12/30<br>SUN.</p>
+        <p class="c-next-event-date-text">{{ nextEvent['date'] }}<br>{{ nextEvent['weekday'] }}.</p>
       </div>
       <div class="c-next-event-description">
-        <description class="c-next-event-description-text"></description>
+        <description v-bind:title="nextEvent['title']"
+                     v-bind:description="nextEvent['description']"
+                     class="c-next-event-description-text">
+        </description>
       </div>
       <div class="c-next-event-button">
         <Button text="参加する"></Button>
@@ -59,9 +62,9 @@
       <span></span>
         <p class="c-past-events-title">PAST EVENTs</p>
         <div class="c-past-events-description">
-          <p class="c-past-events-description-title">イベントタイトル</p>
+          <p class="c-past-events-description-title"> 過去に開催したイベント</p>
           <p class="c-past-events-description-text">
-            イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細
+            これまでにYZKAMPが開催してきたイベントたち
           </p>
       </div>
       <Button text="一覧を見る"></Button>
@@ -71,6 +74,7 @@
   </div>
 </template>
 <script>
+import firebase from 'firebase';
 import Logo from './components/Logo';
 import TopFooter from './components/layouts/TopFooter';
 import ContentTitle from './components/ContentTitle';
@@ -79,6 +83,7 @@ import Button from './components/Button';
 import Description from './components/Description';
 import HamburgerMenu from './components/layouts/HamburgerMenu';
 import WhiteReadMore from './components/WhiteReadMore';
+import firestore from './assets/javascript/firebase';
 
 export default {
   components: { WhiteReadMore,
@@ -89,6 +94,80 @@ export default {
     TopFooter,
     Logo,
     Description },
+  data() {
+    return {
+      pastEvent: {},
+      nextEvent: {},
+    };
+  },
+  created() {
+    this.pastEvent = '';
+    firestore.collection('events').where('begin_datetime', '<=', this.getNowFormattedFirebase()).orderBy('begin_datetime').limit(1)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.pastEvent =
+            {
+              id: doc.id,
+              title: doc.data().title,
+              date: this.fromTimeStampToDate(doc.data().begin_datetime),
+              time: this.fromTimeStampToTime(doc.data().begin_datetime),
+              image_path: `/static/img/${doc.data().image_path}`,
+              description: `${doc.data().description}`,
+              link_url: doc.data().report_link_url,
+            };
+        });
+      });
+    this.nextEvent = '';
+    firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).orderBy('begin_datetime').limit(1)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.nextEvent =
+            {
+              id: doc.id,
+              title: doc.data().title,
+              date: this.fromTimeStampToOnlyDate(doc.data().begin_datetime),
+              weekday: this.fromTimeStampToDay(doc.data().begin_datetime),
+              image_path: `/static/img/${doc.data().image_path}`,
+              description: `${doc.data().description}`,
+              link_url: doc.data().report_link_url,
+            };
+        });
+      });
+  },
+  methods: {
+    fromTimeStampToDay(date) {
+      const WeekChars = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRY', 'SAT'];
+      const d = new Date(date.seconds * 1000);
+      const wday = d.getDay();
+      return `${WeekChars[wday]}`;
+    },
+    fromTimeStampToOnlyDate(date) {
+      const d = new Date(date.seconds * 1000);
+      const month = (`0${d.getMonth() + 1}`).slice(-2);
+      const day = (`0${d.getDate()}`).slice(-2);
+      return `${month}/${day}`;
+    },
+    fromTimeStampToDate(date) {
+      const WeekChars = ['日', '月', '火', '水', '木', '金', '土'];
+      const d = new Date(date.seconds * 1000);
+      const year = d.getFullYear();
+      const month = (`0${d.getMonth() + 1}`).slice(-2);
+      const day = (`0${d.getDate()}`).slice(-2);
+      const wday = d.getDay();
+      return `${year}.${month}.${day}( ${WeekChars[wday]} )`;
+    },
+    fromTimeStampToTime(date) {
+      const d = new Date(date.seconds * 1000);
+      const hour = (`0${d.getHours()}`).slice(-2);
+      const min = (`0${d.getMinutes()}`).slice(-2);
+      return `${hour}:${min}`;
+    },
+    getNowFormattedFirebase() {
+      return firebase.firestore.Timestamp.now();
+    },
+  },
 };
 </script>
 <style>
