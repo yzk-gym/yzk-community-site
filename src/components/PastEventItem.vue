@@ -2,8 +2,8 @@
   <div class="event-item">
     <p class="event-title">{{ title }}</p>
     <ul class="event-datetime">
-      <li class="day"><strong>▶day</strong> {{ day }}</li>
-      <li><strong>▶time</strong> {{ time }} START</li>
+      <li class="day"><strong>▶︎day</strong> {{ day }}</li>
+      <li><strong>▶︎time</strong> {{ time }} START</li>
     </ul>
     <div class="event-sub">
       <div class="event-image-div">
@@ -12,7 +12,7 @@
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
         <a :href=link_url class="text-link" target="_blank">
-          <p class="event-read-more">　READ MORE　　</p>
+          <p class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </a>
       </div>
     </div>

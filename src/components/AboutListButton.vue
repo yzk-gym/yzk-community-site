@@ -17,7 +17,7 @@ export default {
   text-align: center;
 }
 .c-button-text {
-	font-size: 12px;
+  font-size: 12px;
   padding: 0 4em;
   color: white;
 }
