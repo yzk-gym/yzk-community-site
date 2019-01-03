@@ -1,7 +1,13 @@
 <template>
   <div class="top">
-    <logo></logo>
-    <hamburger-menu></hamburger-menu>
+    <header>
+      <div class="top-header">
+      <HamburgerMenu class="p-top-menu"></HamburgerMenu>
+      </div>
+    </header>
+    <div>
+    <img src="./assets/img/top_header.svg">
+    </div>
     <div class="p-next-event">
       <ContentTitle class="c-next-event-title" title="NEXT EVENT"></ContentTitle>
       <div class="c-banner">

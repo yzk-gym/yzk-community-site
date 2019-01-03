@@ -17,13 +17,28 @@ span{
   margin: .05em;
 }
 
+header {
+  position: fixed;
+  height:auto;
+  width:100vw;
+  z-index: 99;
+}
+
 /* top画面 */
 
 .top {
   width: 100vw;
   background-color: #009ACC;
 }
-
+.top-header{
+  position: relative;
+  width:100%;
+}
+.p-top-menu {
+  position: absolute;
+  top:0;
+  right: 0;
+}
 .p-next-event{
   position: relative;
   height:auto;
