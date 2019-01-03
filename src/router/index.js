@@ -30,4 +30,7 @@ export default new Router({
       component: PastEventList,
     },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
