@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import firebase from 'firebase';
 import EventItem from './EventItem';
 import firestore from '../assets/javascript/firebase';
 
@@ -22,20 +23,19 @@ export default {
   components: { EventItem },
   data() {
     return {
-      // テスト用に一時的に中身を作成
       EventListItems: [], // API経由で取得するため空で初期化する
     };
   },
   created() {
     this.EventListItems = [];
-    firestore.collection('events').get().then((querySnapshot) => {
+    firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         this.EventListItems.push(
           {
             id: doc.id,
             title: doc.data().title,
-            date: this.FromTimeStampToDate(doc.data().begin_datetime),
-            time: this.FromTimeStampToTime(doc.data().begin_datetime),
+            date: this.fromTimeStampToDate(doc.data().begin_datetime),
+            time: this.fromTimeStampToTime(doc.data().begin_datetime),
             image_path: doc.data().image_path,
             description: doc.data().description,
             link_url: doc.data().link_url,
@@ -44,7 +44,7 @@ export default {
     });
   },
   methods: {
-    FromTimeStampToDate(date) {
+    fromTimeStampToDate(date) {
       const WeekChars = ['日', '月', '火', '水', '木', '金', '土'];
       const d = new Date(date.seconds * 1000);
       const year = d.getFullYear();
@@ -53,11 +53,14 @@ export default {
       const wday = d.getDay();
       return `${year}.${month}.${day}(${WeekChars[wday]})`;
     },
-    FromTimeStampToTime(date) {
+    fromTimeStampToTime(date) {
       const d = new Date(date.seconds * 1000);
       const hour = (`0${d.getHours()}`).slice(-2);
       const min = (`0${d.getMinutes()}`).slice(-2);
       return `${hour}:${min}`;
+    },
+    getNowFormattedFirebase() {
+      return firebase.firestore.Timestamp.now();
     },
   },
 };
