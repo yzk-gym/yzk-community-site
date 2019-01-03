@@ -105,6 +105,7 @@ export default {
     height: 80px;
     font-size: 14px;
     text-align: left;
+    color: #009ACC;
   }
   .event-read-more {
     display: block;
