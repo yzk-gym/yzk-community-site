@@ -6,7 +6,9 @@
       <li><strong>▶time</strong> {{ time }} START</li>
     </ul>
     <div class="event-sub">
-      <img class="event-image" :src=image_path>
+      <div class="event-image-div">
+        <img class="event-image" :src=image_path>
+      </div>
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
         <a :href=link_url class="text-link" target="_blank">
@@ -87,9 +89,13 @@ export default {
     margin-left: 20px;
     margin-bottom: 20px;
   }
-  .event-image {
+  .event-image-div {
     flex-basis: 160px;
+  }
+  .event-image {
+    width: 160px;
     height: 105px;
+    object-fit: cover;
   }
   .event-string {
     flex-basis: auto;
@@ -105,6 +111,7 @@ export default {
     height: 80px;
     font-size: 14px;
     text-align: left;
+    color: #009ACC;
   }
   .event-read-more {
     display: block;
