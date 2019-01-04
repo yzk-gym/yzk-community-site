@@ -49,12 +49,11 @@
         </router-link>
       </div>
     </div>
-    <!-- イベントスケジュールを表示するセクション。googleカレンダーを埋め込むのがイケてないので一旦非表示。
     <div class="p-schedule">
       <span></span>
       <content-title title="SCHEDULE" class="c-schedule-title"></content-title>
       <Description v-bind:readmore="false" class="c-schedule-description"></Description>
-      <div class="p-calendar">
+<!--      <div class="p-calendar">
         <iframe
           src="https://calendar.google.com/calendar/embed?src=h5bgc3ilvdug7d7i8dfkgnuf8c%40group.calendar.google.com&ctz=Asia%2FTokyo"
           style="border: 0"
@@ -64,11 +63,11 @@
           scrolling="no"
         ></iframe>
       </div>
+-->
       <div class="c-schedule-button">
         <Button text="一覧を見る"></Button>
       </div>
     </div>
-    -->
     <div class="p-past-events">
       <span></span>
         <p class="c-past-events-title">PAST EVENTs</p>

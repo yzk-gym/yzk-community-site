@@ -1,6 +1,6 @@
 <template>
   <div class="p-menu">
-    <div v-on:click="onClick()"
+    <div v-on:click="menuToggle()"
          v-bind:class="{ 'is-active': menuActive }"
          class="c-hamburger-menu">
       <span></span>
@@ -21,6 +21,7 @@
       </li>
     </nav>
     </div>
+    <div v-on:click="close()" class="c-menu-dis"></div>
   </div>
 </template>
 <script>
@@ -33,10 +34,8 @@ export default {
     menuToggle() {
       this.menuActive = !this.menuActive;
     },
-    onClick(e) {
-      this.menuActive = !this.menuActive;
-      console.log(e);
-      console.log(this);
+    close() {
+      this.menuActive = false;
     },
   },
 };
@@ -46,7 +45,6 @@ export default {
     position: relative;
     height: 3em;
     width: 100vw;
-    z-index: 99;
   }
   .c-hamburger-menu {
     position: absolute;
@@ -57,6 +55,7 @@ export default {
     line-height: 0.9em;
     background-color: #0085B3;
     border-radius: 0.4em 0.4em 0.4em 0.4em;
+    z-index: 30;
   }
   .c-hamburger-menu span {
     right: 50%;
@@ -89,7 +88,7 @@ export default {
     background-color: #0085B3;
     width: 100vw;
     height: auto;
-    z-index: -1;
+    z-index: 20;
     opacity: 0;
   }
   .c-menu-list.is-active {
@@ -105,5 +104,9 @@ export default {
     font-family: yzk-font;
     color: white;
     font-size: 20px;
+  }
+  .c-menu-dis {
+    height: 100vh;
+    z-index: 10;
   }
 </style>
