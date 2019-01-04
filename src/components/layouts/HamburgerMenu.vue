@@ -21,7 +21,7 @@
       </li>
     </nav>
     </div>
-    <div v-on:click="close()" class="c-menu-dis"></div>
+    <div v-if="menuActive" v-on:click="close()" class="c-menu-dis"></div>
   </div>
 </template>
 <script>
