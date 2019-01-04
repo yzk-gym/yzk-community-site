@@ -1,10 +1,12 @@
 <template>
   <div class="p-description">
-    <p class="p-description-title">イベントタイトル</p>
-    <p class="p-description-text">イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細イベント詳細</p>
-    <div class="c-description-readmore">
-      <read-more v-if="readmore"></read-more>
-    </div>
+    <p class="p-description-title"> {{ title }} </p>
+    <p class="p-description-text"> {{ description }} </p>
+      <router-link :to="{ name: 'EventDescription', params: { id: this.id } }">
+        <div class="c-description-readmore">
+          <read-more v-if="readmore"></read-more>
+        </div>
+      </router-link>
   </div>
 </template>
 <script>
@@ -15,6 +17,9 @@ export default {
   components: { ReadMore },
   props: {
     readmore: { type: Boolean, default: true },
+    id: { type: String },
+    title: { type: String, require: true },
+    description: { type: String, require: true },
   },
 };
 </script>
@@ -25,6 +30,7 @@ export default {
    .p-description-title{
      padding: 2em 0.5em 0;
      text-align: left;
+     font-weight: bolder;
      color: black;
    }
   .p-description-text{
