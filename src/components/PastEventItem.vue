@@ -47,7 +47,7 @@ export default {
   .event-item {
     background-color: #ebebeb;
     padding-top: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     margin-bottom: 20px;
   }
   a {

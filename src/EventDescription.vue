@@ -21,7 +21,7 @@
     <template v-else-if="is_first === true">
       <a :href="link_url" target="_blank">
         <Button text="参加する
-    (TwiPla に飛ぶよ)"></Button>
+    (TwiPla に飛ぶよ)" class="button-text"></Button>
       </a>
     </template>
     <template v-else></template>
@@ -143,6 +143,7 @@ export default {
     margin: 50px 25px;
     color: #ffffff;
     font-size: 14px;
+    line-height: 18px;
   }
   a {
     text-decoration: none;
@@ -156,5 +157,8 @@ export default {
   }
   .no-report {
     color: #ffffff;
+  }
+  .button-text {
+    font-weight: bold;
   }
 </style>
