@@ -76,14 +76,14 @@ export default {
   /* ここでハンバーガーメニューのアイコンを×に変えてる。微調整してたりするのでちょい崩れたりするかも。 */
   .c-hamburger-menu.is-active span:nth-of-type(1) {
     -webkit-transform: translateY(20px) rotate(-45deg);
-    transform: translateY(9px) rotate(-45deg);
+    transform: translateY(10px) rotate(-45deg);
   }
   .c-hamburger-menu.is-active span:nth-of-type(2) {
     opacity: 0;
   }
   .c-hamburger-menu.is-active span:nth-of-type(3) {
     -webkit-transform: translateY(-20px) rotate(45deg);
-    transform: translateY(-19px) rotate(45deg);
+    transform: translateY(-20px) rotate(45deg);
   }
   .c-menu-list {
     transition: opacity 0.5s;
