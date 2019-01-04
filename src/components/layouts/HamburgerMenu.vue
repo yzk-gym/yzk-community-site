@@ -1,13 +1,15 @@
 <template>
-  <div v-bind:class="{ 'is-active': menuActive }"
-       class="p-menu">
+  <div class="p-menu">
     <div v-on:click="menuToggle()"
-    class="c-hamburger-menu">
+         v-bind:class="{ 'is-active': menuActive }"
+         class="c-hamburger-menu">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div v-if="menuActive" class="c-menu-list">
+    <div v-if="menuActive"
+         v-bind:class="{ 'is-active': menuActive }"
+         class="c-menu-list">
     <nav class="c-menu-list-item">
       <li class="c-menu-list-item-link">YZKAMPヘようこそ</li>
       <li class="c-menu-list-item-link">今後の開催予定イベント一覧</li>
@@ -34,7 +36,7 @@ export default {
     position: relative;
     height: 3em;
     width: 100vw;
-    z-index: 999;
+    z-index: 99;
   }
   .c-hamburger-menu {
     position: absolute;
@@ -56,7 +58,17 @@ export default {
     background-color: white;
     border-radius: 4px;
   }
-  .is-active {
+  /* ここでハンバーガーメニューのアイコンを×に変えてる。微調整してたりするのでちょい崩れたりするかも。 */
+  .c-hamburger-menu.is-active span:nth-of-type(1) {
+    -webkit-transform: translateY(20px) rotate(-45deg);
+    transform: translateY(9px) rotate(-45deg);
+  }
+  .c-hamburger-menu.is-active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .c-hamburger-menu.is-active span:nth-of-type(3) {
+    -webkit-transform: translateY(-20px) rotate(45deg);
+    transform: translateY(-19px) rotate(45deg);
   }
   .c-menu-list {
     position: absolute;
@@ -65,6 +77,10 @@ export default {
     width: 100vw;
     height: auto;
     z-index: -1;
+    opacity: 0;
+  }
+  .c-menu-list.is-active {
+    opacity: 1;
   }
   .c-menu-list-item {
     margin: 3em 0 2em 0;
