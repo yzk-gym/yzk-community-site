@@ -1,7 +1,7 @@
 <template>
   <div class="p-description">
     <p class="p-description-title"> {{ title }} </p>
-    <p class="p-description-text"> {{ description }} </p>
+    <p v-html="description" class="p-description-text"></p>
       <router-link :to="{ name: 'EventDescription', params: { id: this.id } }">
         <div class="c-description-readmore">
           <read-more v-if="readmore"></read-more>
@@ -17,7 +17,7 @@ export default {
   components: { ReadMore },
   props: {
     readmore: { type: Boolean, default: true },
-    id: { type: String },
+    id: { type: String, default: null },
     title: { type: String, require: true },
     description: { type: String, require: true },
   },
@@ -28,13 +28,13 @@ export default {
     margin-left: 20%;
   }
    .p-description-title{
-     padding: 2em 0.5em 0;
+     padding: 2em 1em 0;
      text-align: left;
      font-weight: bolder;
      color: black;
    }
   .p-description-text{
-    padding: 0.5em 0.5em;
+    padding: 0.5em 1em;
     text-align: left;
     color: black;
   }
