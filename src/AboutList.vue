@@ -50,6 +50,9 @@ export default {
   padding-top: 1em;
   padding-bottom: 0.5em;
 }
+.title-section {
+  padding-top: 5em;
+}
 .title-description {
   margin: 1.5em 2em;
   font-family: "yzk-font";
