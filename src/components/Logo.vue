@@ -16,7 +16,7 @@ export default {
     color: white;
   }
   .c-logo-cube {
-    max-height: 40%;
+    max-height: 45%;
   }
   .c-logo-text {
     max-height: 40%;
