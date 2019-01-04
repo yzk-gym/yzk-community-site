@@ -28,12 +28,12 @@
     <div class="footer-section">
       <template v-if="is_past === true">
         <router-link to="/past_events">
-          <AboutListButton class="about-list-button" text="◀過去の開催イベント一覧へ"></AboutListButton>
+          <AboutListButton class="about-list-button" text="◀︎過去の開催イベント一覧へ"></AboutListButton>
         </router-link>
       </template>
       <template v-else>
         <router-link to="/events">
-          <AboutListButton class="about-list-button" text="◀今後の開催イベント一覧へ"></AboutListButton>
+          <AboutListButton class="about-list-button" text="◀︎今後の開催イベント一覧へ"></AboutListButton>
         </router-link>
       </template>
       <white-footer></white-footer>
