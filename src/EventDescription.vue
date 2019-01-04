@@ -12,22 +12,34 @@
       <triangle-property title="place" :description="place"></triangle-property>
     </div>
     <p v-html="description" class="event-description"></p>
-    {{ link_url }}
-    <top-footer></top-footer>
+    <a :href="link_url" target="_blank">
+      <Button text="参加する
+    (TwiPla に飛ぶよ)"></Button>
+    </a>
+    <div class="footer-section">
+      <router-link to="/events">
+        <AboutListButton class="about-list-button" text="◀今後の開催イベント一覧へ"></AboutListButton>
+      </router-link>
+      <white-footer></white-footer>
+    </div>
   </div>
 </template>
 <script>
 import firestore from './assets/javascript/firebase';
 import ContentTitle2 from './components/ContentTitle2';
 import TriangleProperty from './components/TriangleProperty';
-import TopFooter from './components/layouts/TopFooter';
+import WhiteFooter from './components/layouts/WhiteFooter';
+import Button from './components/Button';
+import AboutListButton from './components/AboutListButton';
 
 export default {
   name: 'EventDescription',
   components: {
     ContentTitle2,
     TriangleProperty,
-    TopFooter,
+    WhiteFooter,
+    Button,
+    AboutListButton,
   },
   data() {
     return {
@@ -43,7 +55,7 @@ export default {
     };
   },
   created() {
-    firestore.collection('events').doc('1').get().then((doc) => {
+    firestore.collection('events').doc(this.$route.params.id).get().then((doc) => {
       if (doc.exists) {
         // data設定処理
         this.id = doc.id;
@@ -102,8 +114,18 @@ export default {
   }
   .event-description {
     text-align: left;
-    margin: 30px 25px;
+    margin: 50px 25px;
     color: #ffffff;
     font-size: 14px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .about-list-button {
+    float: left;
+    margin-top: -17px;
+  }
+  .footer-section {
+    margin-top: 70px;
   }
 </style>
