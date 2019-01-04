@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <!--ザンさんがヘッダーつくったらはめる-->
+    <contents-header></contents-header>
     <section class="title-section">
       <content-title2 title="SCHEDULE"></content-title2>
       <p class="title-desctiption">
@@ -21,10 +21,12 @@ import firestore from './assets/javascript/firebase';
 import ContentTitle2 from './components/ContentTitle2';
 import EventListView from './components/EventListView';
 import TopFooter from './components/layouts/TopFooter';
+import ContentsHeader from './components/layouts/ContentsHeader';
 
 export default {
   name: 'EventList',
   components: {
+    ContentsHeader,
     EventListView,
     ContentTitle2,
     TopFooter,
@@ -93,7 +95,7 @@ export default {
     background-color: #009ACC;
   }
   .title-section {
-    padding-top: 1em;
+    padding-top: 6em;
     padding-bottom: 0.5em;
     text-align: center;
   }

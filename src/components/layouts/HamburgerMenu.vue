@@ -9,7 +9,9 @@
     </div>
     <div v-bind:class="{ 'is-active': menuActive }"
          class="c-menu-list">
-      <img v-if="logo" src="../../assets/img/cube_logo_white.svg" class="c-menu-list-logo">
+      <router-link to="/">
+        <img v-if="logo" src="../../assets/img/cube_logo_white.svg" class="c-menu-list-logo">
+      </router-link>
     <nav class="c-menu-list-item">
       <li>
         <router-link to="/about" class="c-menu-list-item-link">YZKAMPヘようこそ</router-link>
@@ -22,7 +24,7 @@
       </li>
     </nav>
     </div>
-    <div v-if="menuActive" v-on:click="close()" class="c-menu-dis"></div>
+    <div v-if="menuActive" v-on:click="close()" class="c-menu-hidden"></div>
   </div>
 </template>
 <script>
@@ -67,7 +69,6 @@ export default {
     box-sizing: border-box;
   }
   .c-hamburger-menu span {
-    margin: 0 0.5em;
     width: 2em;
     height: 3px;
     background-color: white;
@@ -76,26 +77,27 @@ export default {
   /* ここでハンバーガーメニューのアイコンを×に変えてる。微調整してたりするのでちょい崩れたりするかも。 */
   .c-hamburger-menu.is-active span:nth-of-type(1) {
     -webkit-transform: translateY(20px) rotate(-45deg);
-    transform: translateY(10px) rotate(-45deg);
+    transform: translateY(9px) rotate(-45deg);
   }
   .c-hamburger-menu.is-active span:nth-of-type(2) {
     opacity: 0;
   }
   .c-hamburger-menu.is-active span:nth-of-type(3) {
     -webkit-transform: translateY(-20px) rotate(45deg);
-    transform: translateY(-20px) rotate(45deg);
+    transform: translateY(-19px) rotate(45deg);
   }
   .c-menu-list {
+    pointer-events: none;
     transition: opacity 0.5s;
     position: absolute;
     top: 0;
     background-color: #0085B3;
     width: 100vw;
     height: auto;
-    z-index: 20;
     opacity: 0;
   }
   .c-menu-list.is-active {
+    pointer-events: all;
     opacity: 1;
   }
   .c-menu-list-logo {
@@ -104,6 +106,7 @@ export default {
     width: 4em;
     left: 0;
     color: white;
+    z-index: 20;
   }
   .c-menu-list-item {
     margin: 3.5em 0 2em 0;
@@ -116,7 +119,7 @@ export default {
     color: white;
     font-size: 20px;
   }
-  .c-menu-dis {
+  .c-menu-hidden {
     height: 100vh;
     z-index: 10;
   }
