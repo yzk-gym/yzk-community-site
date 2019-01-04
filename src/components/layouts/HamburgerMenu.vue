@@ -22,7 +22,7 @@
       </li>
     </nav>
     </div>
-    <div v-if="menuActive" v-on:click="close()" class="c-menu-dis"></div>
+    <div v-if="menuActive" v-on:click="close()" class="c-menu-hidden"></div>
   </div>
 </template>
 <script>
@@ -86,16 +86,17 @@ export default {
     transform: translateY(-20px) rotate(45deg);
   }
   .c-menu-list {
+    pointer-events: none;
     transition: opacity 0.5s;
     position: absolute;
     top: 0;
     background-color: #0085B3;
     width: 100vw;
     height: auto;
-    z-index: 20;
     opacity: 0;
   }
   .c-menu-list.is-active {
+    pointer-events: all;
     opacity: 1;
   }
   .c-menu-list-logo {
@@ -104,6 +105,7 @@ export default {
     width: 4em;
     left: 0;
     color: white;
+    z-index: 20;
   }
   .c-menu-list-item {
     margin: 3.5em 0 2em 0;
@@ -116,7 +118,7 @@ export default {
     color: white;
     font-size: 20px;
   }
-  .c-menu-dis {
+  .c-menu-hidden {
     height: 100vh;
     z-index: 10;
   }
