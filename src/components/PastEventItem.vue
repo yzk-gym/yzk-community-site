@@ -7,20 +7,23 @@
     </ul>
     <div class="event-sub">
       <div class="event-image-div">
-        <img class="event-image" :src=image_path>
+        <img v-if="image_path !== ''" class="event-image" :src=image_path>
       </div>
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
-        <router-link class="text-link" :to="{ name: 'EventDescription', params: { id: this.id } }">
-          <p class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        </router-link>
+        <div class="read-more-div">
+          <router-link class="text-link"
+                       :to="{ name: 'EventDescription', params: { id: this.id } }">
+            <span class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          </router-link>
+        </div>
       </div>
     </div>
     <div class="event-entry">
-      <a v-show="link_url != ''" :href=link_url target="_blank">
-        <EventListEntryButton v-show="link_url != ''" text="レポートを見る"></EventListEntryButton>
+      <a v-show="link_url !== ''" :href=link_url target="_blank">
+        <EventListEntryButton v-show="link_url !== ''" text="レポートを見る"></EventListEntryButton>
       </a>
-      <span v-show="link_url == ''" class="no-report">このイベントの開催レポートはありません</span>
+      <span v-show="link_url === ''" class="no-report">このイベントのレポートはありません</span>
     </div>
   </div>
 </template>
@@ -47,7 +50,7 @@ export default {
   .event-item {
     background-color: #ebebeb;
     padding-top: 10px;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     margin-bottom: 20px;
   }
   a {
@@ -57,8 +60,11 @@ export default {
     color: #FF8A7D;
   }
   .no-report {
+    display: block;
     color: #FF8A7D;
     font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 15px;
   }
   .event-title {
     font-size: 18px;
@@ -97,6 +103,7 @@ export default {
     width: 160px;
     height: 105px;
     object-fit: cover;
+    border-style:none;
   }
   .event-string {
     flex-basis: auto;
@@ -106,9 +113,10 @@ export default {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+    text-overflow: ellipsis;
     overflow: hidden;
     margin-top: 2px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-left: 8px;
     height: 80px;
     font-size: 14px;
@@ -116,10 +124,10 @@ export default {
     color: #009ACC;
   }
   .event-read-more {
-    display: block;
+    display: inline-block;
     text-align: right;
     margin-top: 7px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: -20px;
     font-size: 14px;
     text-decoration: underline;
@@ -128,5 +136,8 @@ export default {
   .event-entry {
     margin-right: 20px;
     margin-left: 20px;
+  }
+  .read-more-div {
+    text-align: right;
   }
 </style>
