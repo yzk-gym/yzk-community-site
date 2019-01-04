@@ -32,7 +32,14 @@ header {
 }
 .top-header{
   position: relative;
-  width:100%;
+  width:100vw;
+}
+.p-top-image{
+  padding: 1em;
+}
+.top-tent {
+  width: 90vw;
+  height: auto;
 }
 .p-top-menu {
   position: absolute;
@@ -136,7 +143,18 @@ header {
   font-size: 28px;
 }
 .c-past-events-description {
-  margin-right: 20%;
+  text-align: left;
+  margin: 2em 20% 0 0;
   color: white;
   background-color: #009ACC;
+}
+
+.c-past-events-description-title {
+  margin: 0;
+  padding: 1em 1em 0.5em;
+  font-weight: bold;
+}
+.c-past-events-description-text {
+  margin: 0;
+  padding: 0.5em 1em 1em;
 }

@@ -22,7 +22,7 @@ export default {
   }
   .c-footer-itemlist {
     text-align: left;
-    padding: 3em 0 0 0;
+    padding: 4em 0 0 0;
   }
   .c-footer-item {
     list-style: none;

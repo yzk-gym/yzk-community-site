@@ -2,11 +2,15 @@
   <div class="top">
     <header>
       <div class="top-header">
-      <HamburgerMenu class="p-top-menu"></HamburgerMenu>
+        <div class="p-top-menu">
+          <HamburgerMenu></HamburgerMenu>
+        </div>
       </div>
     </header>
-    <div>
-    <img src="./assets/img/top_header.svg">
+    <div class="p-top-image">
+      <logo></logo>
+      <p>ここに<br>詳細<br>書く</p>
+    <img src="./assets/img/tent.png" class="top-tent">
     </div>
     <div class="p-next-event">
       <ContentTitle class="c-next-event-title" title="NEXT EVENT"></ContentTitle>
@@ -64,7 +68,7 @@
         <div class="c-past-events-description">
           <p class="c-past-events-description-title"> 過去に開催したイベント</p>
           <p class="c-past-events-description-text">
-            これまでにYZKAMPが開催してきたイベントたち
+            これまでにYZKAMPが開催してきたイベントたち。
           </p>
       </div>
       <Button text="一覧を見る"></Button>

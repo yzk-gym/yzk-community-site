@@ -40,11 +40,13 @@ export default {
   }
   .c-hamburger-menu {
     position: absolute;
-    right: 0;
+    top: 1em;
+    right: 1em;
     width: 3em;
     height: 3em;
     line-height: 0.9em;
     background-color: #0085B3;
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
   }
   .c-hamburger-menu span {
     right: 50%;
@@ -83,9 +85,9 @@ export default {
     opacity: 1;
   }
   .c-menu-list-item {
-    margin: 3em 0 2em 0;
+    margin: 3.5em 0 2em 0;
     list-style-type: none;
-    line-height: 2em;
+    line-height: 2.5em;
   }
   .c-menu-list-item-link {
     font-family: yzk-font;
