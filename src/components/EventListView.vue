@@ -29,20 +29,21 @@ export default {
   },
   created() {
     this.EventListItems = [];
-    firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        this.EventListItems.push(
-          {
-            id: doc.id,
-            title: doc.data().title,
-            date: this.fromTimeStampToDate(doc.data().begin_datetime),
-            time: this.fromTimeStampToTime(doc.data().begin_datetime),
-            image_path: `/static/img/${doc.data().image_path}`,
-            description: this.replaceNewlineTag(doc.data().description),
-            link_url: doc.data().link_url,
-          });
+    firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).orderBy('begin_datetime').get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.EventListItems.push(
+            {
+              id: doc.id,
+              title: doc.data().title,
+              date: this.fromTimeStampToDate(doc.data().begin_datetime),
+              time: this.fromTimeStampToTime(doc.data().begin_datetime),
+              image_path: `/static/img/${doc.data().image_path}`,
+              description: this.replaceNewlineTag(doc.data().description),
+              link_url: doc.data().link_url,
+            });
+        });
       });
-    });
   },
   methods: {
     fromTimeStampToDate(date) {
