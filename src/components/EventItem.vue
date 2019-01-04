@@ -94,6 +94,7 @@ export default {
   }
   .event-string {
     flex-basis: auto;
+    width: 100%;
   }
   .event-description {
     display: -webkit-box;
