@@ -1,38 +1,45 @@
 <template>
   <div id="about-list">
-    <content-title title="Welcome to YZKAMP!" class="c-description-title"></content-title>
-    <p class="title-description">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-    <div class="about-list-card">
+    <contents-header></contents-header>
+    <section class="title-section">
+      <content-title title="Welcome to YZKAMP!" class="c-description-title"></content-title>
+      <p class="title-description">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </section>
+    <section class="about-list-card">
       <about-list-card></about-list-card>
-    </div>
-    <div>
+    </section>
+    <div class="invite-section">
       <p class="invite-text">参加してみたくなったら
         <br>一緒に遊ぼう！
       </p>
     </div>
-    <div>
-      <AboutListButton class="about-list-button" text="◀イベント一覧を見る"></AboutListButton>
+    <div class="footer-section">
+      <router-link to="/events">
+        <AboutListButton class="about-list-button" text="◀︎イベント一覧を見る"></AboutListButton>
+      </router-link>
+      <white-footer></white-footer>
     </div>
-    <top-footer></top-footer>
   </div>
 </template>
 <script>
-import TopFooter from './components/layouts/TopFooter';
+import WhiteFooter from './components/layouts/WhiteFooter';
 import ContentTitle from './components/ContentTitle';
 import AboutListButton from './components/AboutListButton';
 import AboutListCard from './components/AboutListCard';
+import ContentsHeader from './components/layouts/ContentsHeader';
 
 export default {
   name: 'AboutList',
   components: {
     AboutListButton,
     ContentTitle,
-    TopFooter,
+    WhiteFooter,
     AboutListCard,
+    ContentsHeader,
   },
 };
 </script>
-<style scoded>
+<style scoped>
 #about-list {
   width: 100vw;
   background-color: #009acc;
@@ -52,8 +59,11 @@ export default {
   line-height: 24px;
   letter-spacing: 1px;
 }
+.invite-section {
+  margin-top: 50px;
+}
 .invite-text {
-  margin: 1.3em 0;
+  margin: 0;
   font-family: "yzk-font";
   font-size: 22px;
   font-weight: bold;
@@ -63,5 +73,9 @@ export default {
 }
 .about-list-button {
   float: left;
+  margin-top: -17px;
+}
+.footer-section {
+  margin-top: 50px;
 }
 </style>

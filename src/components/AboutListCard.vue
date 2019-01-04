@@ -3,44 +3,38 @@
     <div class="card">
       <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
       <p class="card-title">▶︎オープンな秘密基地</p>
-      <read-more v-if="readmore" class="c-description-readmore"></read-more>
+			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
       <p class="card-title">▶︎クロスオーバー</p>
-      <read-more v-if="readmore" class="c-description-readmore"></read-more>
+			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon03.svg" class="about-list-icon">
       <p class="card-title">▶︎楽しむためのレベル上げ</p>
-      <read-more v-if="readmore" class="c-description-readmore"></read-more>
+			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon04.svg" class="about-list-icon">
       <p class="card-title">▶︎楽しいをつくる</p>
-      <read-more v-if="readmore" class="c-description-readmore"></read-more>
+			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon05.svg" class="about-list-icon">
       <p class="card-title-exception">▶︎「やってみたら楽しい」をやれる場所</p>
-      <read-more v-if="readmore" class="c-description-readmore"></read-more>
+			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon06.svg" class="about-list-icon">
       <p class="card-title">▶︎スマートなバカ</p>
-      <read-more v-if="readmore" class="c-description-readmore"></read-more>
+			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
   </div>
 </template>
 <script>
-import ReadMore from '../components/ReadMore';
-
 export default {
   name: 'AboutListCard',
-  components: { ReadMore },
-  props: {
-    readmore: { type: Boolean, default: true },
-  },
 };
 </script>
 <style scoped>
@@ -64,7 +58,7 @@ export default {
   position: relative;
   margin: 0.3em;
   width: 10.5em;
-  height: 15em;
+  height: 14em;
 }
 .card-title {
   margin-top: 16px;
@@ -82,9 +76,15 @@ export default {
   line-height: 16px;
   letter-spacing: 1px;
 }
-.c-description-readmore {
-  color: #ff8a7d;
-  margin: 0 1.5em;
+.event-read-more {
+	color: #ff8a7d;
+	text-align: center;
+	margin-top: 16px;
+	margin-bottom: 0px;
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: underline;
+	white-space: pre;
 }
 @media (min-width: 600px) {
   .flexbox {
