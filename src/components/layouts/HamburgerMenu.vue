@@ -52,7 +52,6 @@ export default {
   }
   .c-hamburger-menu {
     position: absolute;
-    text-align: center;
     top: 1em;
     right: 1em;
     width: 3em;
@@ -63,12 +62,12 @@ export default {
     z-index: 30;
   }
   .c-hamburger-menu span {
-    right: 50%;
     display: inline-block;
     transition: all .4s;
     box-sizing: border-box;
   }
   .c-hamburger-menu span {
+    margin: 0 0.5em;
     width: 2em;
     height: 3px;
     background-color: white;
