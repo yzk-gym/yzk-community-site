@@ -3,7 +3,7 @@
     <header>
       <div class="top-header">
         <div class="p-top-menu">
-          <HamburgerMenu></HamburgerMenu>
+          <HamburgerMenu v-on:close="close"></HamburgerMenu>
         </div>
       </div>
     </header>
@@ -182,6 +182,9 @@ export default {
     },
     getNowFormattedFirebase() {
       return firebase.firestore.Timestamp.now();
+    },
+    close() {
+      console.log('test');
     },
   },
 };
