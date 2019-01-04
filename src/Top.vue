@@ -24,6 +24,7 @@
         <description v-bind:title="nextEvent['title']"
                      v-bind:description="nextEvent['description']"
                      v-bind:id="nextEvent['id']"
+                     v-bind:blank="true"
                      class="c-next-event-description-text">
         </description>
       </div>
@@ -52,7 +53,11 @@
     <div class="p-schedule">
       <span></span>
       <content-title title="SCHEDULE" class="c-schedule-title"></content-title>
-      <Description v-bind:readmore="false" class="c-schedule-description"></Description>
+      <span></span>
+      <Description v-bind:readmore="false"
+                   title="今後のイベントスケジュール"
+                   description="これから一ヶ月先のスケジュール。<br>あなたの参加をお待ちしております！"
+                   class="c-schedule-description"></Description>
 <!--      <div class="p-calendar">
         <iframe
           src="https://calendar.google.com/calendar/embed?src=h5bgc3ilvdug7d7i8dfkgnuf8c%40group.calendar.google.com&ctz=Asia%2FTokyo"
@@ -65,23 +70,28 @@
       </div>
 -->
       <div class="c-schedule-button">
-        <Button text="一覧を見る"></Button>
+        <a>
+          <router-link to="/events">
+            <Button text="一覧を見る"></Button>
+          </router-link>
+        </a>
       </div>
     </div>
     <div class="p-past-events">
       <span></span>
         <p class="c-past-events-title">PAST EVENTs</p>
         <div class="c-past-events-description">
-          <p class="c-past-events-description-title"> 過去に開催したイベント</p>
+          <p class="c-past-events-description-title">▶︎過去に開催したイベント</p>
           <p class="c-past-events-description-text">
             これまでにYZKAMPが開催してきたイベントたち。
           </p>
       </div>
       <img class="c-past-events-image" :src="pastEvent['image_path']">
-        <a><router-link to="/past_events">
-          <Button text="一覧を見る"></Button>
-        </router-link>
-      </a>
+        <a>
+          <router-link to="/past_events">
+            <Button text="一覧を見る"></Button>
+          </router-link>
+        </a>
       <span></span>
     </div>
     <top-footer></top-footer>

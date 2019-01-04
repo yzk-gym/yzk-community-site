@@ -125,7 +125,7 @@ a {
 }
 
 
-/* スケジュール 今は非表示になってる */
+/* スケジュール */
 
 .p-schedule {
   background-color: #0085B3;
@@ -162,7 +162,7 @@ a {
 }
 
 .c-past-events-title{
-  margin: 0 0 0 30%;
+  margin: 0 0 0 45%;
   padding-right: 1em;
   text-align: right;
   color: #009ACC;

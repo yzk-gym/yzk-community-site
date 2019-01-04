@@ -21,7 +21,7 @@ import firestore from './assets/javascript/firebase';
 import ContentTitle2 from './components/ContentTitle2';
 import EventListView from './components/EventListView';
 import TopFooter from './components/layouts/TopFooter';
-import ContentsHeader from "./components/layouts/ContentsHeader";
+import ContentsHeader from './components/layouts/ContentsHeader';
 
 export default {
   name: 'EventList',
