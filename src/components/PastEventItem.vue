@@ -11,9 +11,9 @@
       </div>
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
-        <a :href=link_url class="text-link" target="_blank">
+        <router-link class="text-link" :to="{ name: 'EventDescription', params: { id: this.id } }">
           <p class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="event-entry">
@@ -32,6 +32,7 @@ export default {
   name: 'EventItem',
   components: { EventListEntryButton },
   props: {
+    id: { type: String, require: true },
     title: { type: String, require: true },
     day: { type: String, require: true },
     time: { type: String, require: true },
