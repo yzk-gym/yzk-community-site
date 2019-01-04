@@ -1,6 +1,6 @@
 <template>
   <div id="event_description">
-    <!--ザンさんがヘッダーつくったらはめる-->
+    <contents-header></contents-header>
     <section class="title-section">
       <content-title2 title="EVENT"></content-title2>
       <p class="event-title">{{ title }}</p>
@@ -47,10 +47,12 @@ import TriangleProperty from './components/TriangleProperty';
 import WhiteFooter from './components/layouts/WhiteFooter';
 import Button from './components/Button';
 import AboutListButton from './components/AboutListButton';
+import ContentsHeader from './components/layouts/ContentsHeader';
 
 export default {
   name: 'EventDescription',
   components: {
+    ContentsHeader,
     ContentTitle2,
     TriangleProperty,
     WhiteFooter,
@@ -122,7 +124,7 @@ export default {
     background-color: #009ACC;
   }
   .title-section {
-    padding-top: 1em;
+    padding-top: 6em;
     padding-bottom: 0.5em;
     text-align: center;
   }
