@@ -9,6 +9,7 @@
     </div>
     <div v-bind:class="{ 'is-active': menuActive }"
          class="c-menu-list">
+      <img v-if="logo" src="../../assets/img/cube_logo_white.svg" class="c-menu-list-logo">
     <nav class="c-menu-list-item">
       <li>
         <router-link to="/about" class="c-menu-list-item-link">YZKAMPヘようこそ</router-link>
@@ -29,6 +30,9 @@ export default {
   name: 'HamburgerMenu',
   data() {
     return { menuActive: false };
+  },
+  props: {
+    logo: { type: Boolean, require: true, default: false },
   },
   methods: {
     menuToggle() {
@@ -93,6 +97,13 @@ export default {
   }
   .c-menu-list.is-active {
     opacity: 1;
+  }
+  .c-menu-list-logo {
+    position:absolute;
+    margin: 0.5em;
+    width: 4em;
+    left: 0;
+    color: white;
   }
   .c-menu-list-item {
     margin: 3.5em 0 2em 0;

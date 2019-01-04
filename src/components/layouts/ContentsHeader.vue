@@ -1,8 +1,10 @@
 <template>
-  <header class="header">
-    <header-in-logo v-if="headerInLogo"></header-in-logo>
-    <hamburger-menu class="header-hunburgermenu"></hamburger-menu>
-  </header>
+  <div class="p-header">
+    <router-link to="/">
+      <img class="p-header-logo" src="../../assets/img/cube_logo_white.svg">
+    </router-link>
+    <hamburger-menu v-bind:logo="true" class="header-hunburgermenu"></hamburger-menu>
+  </div>
 </template>
 <script>
 import HeaderInLogo from './HeaderInLogo';
@@ -23,12 +25,19 @@ export default {
 };
 </script>
 <style scoped>
-  .header {
-    position: sticky;
-    top: 0;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
+  .p-header {
+    height: 5em;
+    width: 100vw;
+    position: fixed;
+    background-color: #0085B3;
+    z-index: 30;
+  }
+  .p-header-logo {
+    position: absolute;
+    margin: 0.5em;
+    top:0;
+    left: 0;
+    width:4em;
   }
   .header-hamburgermenu {
     display: flex;
