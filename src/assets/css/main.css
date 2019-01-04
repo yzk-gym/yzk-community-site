@@ -28,6 +28,10 @@ header {
   z-index: 99;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* top画面 */
 
 .top {
@@ -41,6 +45,9 @@ header {
 .p-top-image{
   padding: 1em;
 }
+.p-top-text {
+  color: white;
+}
 .top-tent {
   width: 90vw;
   height: auto;
@@ -50,6 +57,9 @@ header {
   top:0;
   right: 0;
 }
+
+/* 次回のイベント */
+
 .p-next-event{
   position: relative;
   height:auto;
@@ -92,6 +102,9 @@ header {
   background-color: #EBEBEB;
 }
 
+
+/* YZKAMPへようこそ */
+
 .p-lead {
   text-align: center;
 }
@@ -103,10 +116,17 @@ header {
   color: white;
   margin: 0 2em;
 }
+.c-lead-text {
+  color: white;
+}
 .c-description-readmore {
   margin: 0 35%;
   color: white;
 }
+
+
+/* スケジュール 今は非表示になってる */
+
 .p-schedule {
   background-color: #0085B3;
 }
@@ -133,6 +153,10 @@ header {
     height: 600px;
   }
 }
+
+
+/* 過去のイベント */
+
 .p-past-events {
   background-color: #EBEBEB;
 }
@@ -152,7 +176,6 @@ header {
   color: white;
   background-color: #009ACC;
 }
-
 .c-past-events-description-title {
   margin: 0;
   padding: 1em 1em 0.5em;
@@ -161,4 +184,8 @@ header {
 .c-past-events-description-text {
   margin: 0;
   padding: 0.5em 1em 1em;
+}
+.c-past-events-image {
+  margin:1.5em 2em 0;
+  width: 80%;
 }

@@ -11,9 +11,15 @@
          v-bind:class="{ 'is-active': menuActive }"
          class="c-menu-list">
     <nav class="c-menu-list-item">
-      <li class="c-menu-list-item-link">YZKAMPヘようこそ</li>
-      <li class="c-menu-list-item-link">今後の開催予定イベント一覧</li>
-      <li class="c-menu-list-item-link">過去の開催イベント一覧</li>
+      <li>
+        <router-link to="/about" class="c-menu-list-item-link">YZKAMPヘようこそ</router-link>
+      </li>
+      <li>
+        <router-link to="/events" class="c-menu-list-item-link">今後の開催予定イベント一覧</router-link>
+      </li>
+      <li>
+        <router-link to="/past_events" class="c-menu-list-item-link">過去の開催イベント一覧</router-link>
+      </li>
     </nav>
     </div>
   </div>
@@ -88,6 +94,7 @@ export default {
     margin: 3.5em 0 2em 0;
     list-style-type: none;
     line-height: 2.5em;
+    color: white;
   }
   .c-menu-list-item-link {
     font-family: yzk-font;

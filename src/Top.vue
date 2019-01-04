@@ -9,7 +9,7 @@
     </header>
     <div class="p-top-image">
       <logo></logo>
-      <p>ここに<br>詳細<br>書く</p>
+      <p class="p-top-text">ここに<br>詳細<br>書く</p>
     <img src="./assets/img/tent.png" class="top-tent">
     </div>
     <div class="p-next-event">
@@ -27,19 +27,25 @@
         </description>
       </div>
       <div class="c-next-event-button">
-        <Button text="参加する"></Button>
+        <template v-if="nextEvent['is_first'] === true">
+          <a :href="nextEvent['link_url']" target="_blank">
+          <Button text="参加する"></Button>
+          </a>
+        </template>
       </div>
       <span></span>
     </div>
     <div class="p-lead">
       <img src="./assets/img/cube_logo_white.svg" class="c-lead-logo">
       <content-title title="Welcome to YZKAMP!" class="c-lead-title"></content-title>
-      <p>詳細を
+      <p class="c-lead-text">詳細を
         <br>ここに
         <br>かく
       </p>
       <div class="c-description-readmore">
-        <white-read-more></white-read-more>
+        <router-link to="/about">
+          <white-read-more></white-read-more>
+        </router-link>
       </div>
     </div>
     <!-- イベントスケジュールを表示するセクション。googleカレンダーを埋め込むのがイケてないので一旦非表示。
@@ -71,7 +77,11 @@
             これまでにYZKAMPが開催してきたイベントたち。
           </p>
       </div>
-      <Button text="一覧を見る"></Button>
+      <img class="c-past-events-image" :src="pastEvent['image_path']">
+        <a><router-link to="/past_events">
+          <Button text="一覧を見る"></Button>
+        </router-link>
+      </a>
       <span></span>
     </div>
     <top-footer></top-footer>
@@ -118,7 +128,7 @@ export default {
               time: this.fromTimeStampToTime(doc.data().begin_datetime),
               image_path: `/static/img/${doc.data().image_path}`,
               description: `${doc.data().description}`,
-              link_url: doc.data().report_link_url,
+              link_url: doc.data().link_url,
             };
         });
       });
@@ -135,7 +145,8 @@ export default {
               weekday: this.fromTimeStampToDay(doc.data().begin_datetime),
               image_path: `/static/img/${doc.data().image_path}`,
               description: `${doc.data().description}`,
-              link_url: doc.data().report_link_url,
+              link_url: doc.data().link_url,
+              is_first: true,
             };
         });
       });
@@ -174,15 +185,4 @@ export default {
   },
 };
 </script>
-<style>
-#p-calendar iframe {
-  margin: 0 10%;
-  max-width: 80%;
-  max-height: 300px;
-}
-@media all and (min-width: 768px) {
-  .googleCalendar iframe {
-    height: 600px;
-  }
-}
-</style>
+
