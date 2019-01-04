@@ -3,14 +3,14 @@
     <!--ザンさんがヘッダーつくったらはめる-->
     <section class="title-section">
       <content-title2 title="EVENT"></content-title2>
-      <p class="event-title"></p>
+      <p class="event-title">{{ title }}</p>
     </section>
-    {{ id }}
-    {{ title }}
-    {{ date }}
-    {{ begin_time }}
-    {{ place }}
-    {{ image_path }}
+    <img :src="image_path" class="event-image">
+    <div class="property-div">
+      <triangle-property title="day" :description="date"></triangle-property>
+      <triangle-property title="time" :description="begin_time + ' START'"></triangle-property>
+      <triangle-property title="place" :description="place"></triangle-property>
+    </div>
     {{ description }}
     {{ link_url }}
     <top-footer></top-footer>
@@ -19,12 +19,14 @@
 <script>
 import firestore from './assets/javascript/firebase';
 import ContentTitle2 from './components/ContentTitle2';
+import TriangleProperty from './components/TriangleProperty';
 import TopFooter from './components/layouts/TopFooter';
 
 export default {
   name: 'EventDescription',
   components: {
     ContentTitle2,
+    TriangleProperty,
     TopFooter,
   },
   data() {
@@ -83,5 +85,19 @@ export default {
     padding-top: 1em;
     padding-bottom: 0.5em;
     text-align: center;
+  }
+  .event-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  .event-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  .property-div {
+    margin: 30px 50px;
   }
 </style>
