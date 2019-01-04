@@ -52,6 +52,7 @@ export default {
   }
   .c-hamburger-menu {
     position: absolute;
+    text-align: center;
     top: 1em;
     right: 1em;
     width: 3em;
