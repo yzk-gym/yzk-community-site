@@ -1,14 +1,13 @@
 <template>
   <div class="p-menu">
-    <div v-on:click="menuToggle()"
+    <div v-on:click="onClick()"
          v-bind:class="{ 'is-active': menuActive }"
          class="c-hamburger-menu">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div v-if="menuActive"
-         v-bind:class="{ 'is-active': menuActive }"
+    <div v-bind:class="{ 'is-active': menuActive }"
          class="c-menu-list">
     <nav class="c-menu-list-item">
       <li>
@@ -33,6 +32,11 @@ export default {
   methods: {
     menuToggle() {
       this.menuActive = !this.menuActive;
+    },
+    onClick(e) {
+      this.menuActive = !this.menuActive;
+      console.log(e);
+      console.log(this);
     },
   },
 };
@@ -79,6 +83,7 @@ export default {
     transform: translateY(-19px) rotate(45deg);
   }
   .c-menu-list {
+    transition: opacity 0.5s;
     position: absolute;
     top: 0;
     background-color: #0085B3;
