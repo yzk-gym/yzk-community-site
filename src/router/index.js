@@ -32,7 +32,7 @@ export default new Router({
     },
     {
       path: '/events/:id',
-      name: 'PastEventList',
+      name: 'EventDescription',
       component: EventDescription,
     },
   ],

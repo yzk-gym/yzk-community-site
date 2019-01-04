@@ -12,19 +12,36 @@
       <triangle-property title="place" :description="place"></triangle-property>
     </div>
     <p v-html="description" class="event-description"></p>
-    <a :href="link_url" target="_blank">
-      <Button text="参加する
+    <template v-if="is_past === true && is_first === true">
+      <a v-show="report_link_url !== ''" :href=report_link_url target="_blank">
+        <Button v-show="link_url !== ''" text="レポートを見る"></Button>
+      </a>
+      <span v-show="report_link_url === ''" class="no-report">このイベントの開催レポートはありません</span>
+    </template>
+    <template v-else-if="is_first === true">
+      <a :href="link_url" target="_blank">
+        <Button text="参加する
     (TwiPla に飛ぶよ)"></Button>
-    </a>
+      </a>
+    </template>
+    <template v-else></template>
     <div class="footer-section">
-      <router-link to="/events">
-        <AboutListButton class="about-list-button" text="◀今後の開催イベント一覧へ"></AboutListButton>
-      </router-link>
+      <template v-if="is_past === true">
+        <router-link to="/past_events">
+          <AboutListButton class="about-list-button" text="◀過去の開催イベント一覧へ"></AboutListButton>
+        </router-link>
+      </template>
+      <template v-else>
+        <router-link to="/events">
+          <AboutListButton class="about-list-button" text="◀今後の開催イベント一覧へ"></AboutListButton>
+        </router-link>
+      </template>
       <white-footer></white-footer>
     </div>
   </div>
 </template>
 <script>
+import firebase from 'firebase';
 import firestore from './assets/javascript/firebase';
 import ContentTitle2 from './components/ContentTitle2';
 import TriangleProperty from './components/TriangleProperty';
@@ -52,6 +69,9 @@ export default {
       image_path: '',
       description: '',
       link_url: '',
+      report_link_url: '',
+      is_past: true,
+      is_first: false,
     };
   },
   created() {
@@ -66,6 +86,9 @@ export default {
         this.place = doc.data().place;
         this.description = `${doc.data().description}`;
         this.link_url = doc.data().link_url;
+        this.report_link_url = doc.data().report_link_url;
+        this.is_past = this.isPast(doc.data().begin_datetime);
+        this.is_first = true;
       }
     });
   },
@@ -84,6 +107,9 @@ export default {
       const hour = (`0${d.getHours()}`).slice(-2);
       const min = (`0${d.getMinutes()}`).slice(-2);
       return `${hour}:${min}`;
+    },
+    isPast(timestamp) {
+      return timestamp <= firebase.firestore.Timestamp.now();
     },
   },
 };
@@ -127,5 +153,8 @@ export default {
   }
   .footer-section {
     margin-top: 70px;
+  }
+  .no-report {
+    color: #ffffff;
   }
 </style>

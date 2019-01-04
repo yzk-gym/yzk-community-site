@@ -3,6 +3,7 @@
     <event-item
       v-for="item in EventListItems"
       v-bind:key="item.id"
+      :id=item.id
       :title=item.title
       :day=item.date
       :time=item.time
