@@ -5,26 +5,25 @@
       <content-title2 title="EVENT"></content-title2>
       <p class="event-title">{{ title }}</p>
     </section>
-    <img :src="image_path" class="event-image">
+    <img v-if="image_path !== ''" :src="image_path" class="event-image">
     <div class="property-div">
       <triangle-property title="day" :description="date"></triangle-property>
       <triangle-property title="time" :description="begin_time + ' START'"></triangle-property>
       <triangle-property title="place" :description="place"></triangle-property>
     </div>
     <p v-html="description" class="event-description"></p>
-    <template v-if="is_past === true && is_first === true">
+    <template v-if="is_past === true">
       <a v-show="report_link_url !== ''" :href=report_link_url target="_blank">
         <Button v-show="link_url !== ''" text="レポートを見る"></Button>
       </a>
       <span v-show="report_link_url === ''" class="no-report">このイベントの開催レポートはありません</span>
     </template>
-    <template v-else-if="is_first === true">
+    <template v-else>
       <a :href="link_url" target="_blank">
         <Button text="参加する
     (TwiPla に飛ぶよ)" class="button-text"></Button>
       </a>
     </template>
-    <template v-else></template>
     <div class="footer-section">
       <template v-if="is_past === true">
         <router-link to="/past_events">
@@ -71,24 +70,14 @@ export default {
       link_url: '',
       report_link_url: '',
       is_past: true,
-      is_first: false,
     };
   },
-  created() {
-    firestore.collection('events').doc(this.$route.params.id).get().then((doc) => {
+  beforeRouteEnter(route, redirect, next) {
+    firestore.collection('events').doc(route.params.id).get().then((doc) => {
       if (doc.exists) {
-        // data設定処理
-        this.id = doc.id;
-        this.title = doc.data().title;
-        this.date = this.fromTimeStampToDate(doc.data().begin_datetime);
-        this.begin_time = this.fromTimeStampToTime(doc.data().begin_datetime);
-        this.image_path = `/static/img/${doc.data().image_path}`;
-        this.place = doc.data().place;
-        this.description = `${doc.data().description}`;
-        this.link_url = doc.data().link_url;
-        this.report_link_url = doc.data().report_link_url;
-        this.is_past = this.isPast(doc.data().begin_datetime);
-        this.is_first = true;
+        next((vm) => {
+          vm.dataSet(doc);
+        });
       }
     });
   },
@@ -110,6 +99,19 @@ export default {
     },
     isPast(timestamp) {
       return timestamp <= firebase.firestore.Timestamp.now();
+    },
+    dataSet(doc) {
+      // data設定処理
+      this.id = doc.id;
+      this.title = doc.data().title;
+      this.date = this.fromTimeStampToDate(doc.data().begin_datetime);
+      this.begin_time = this.fromTimeStampToTime(doc.data().begin_datetime);
+      this.image_path = `/static/img/${doc.data().image_path}`;
+      this.place = doc.data().place;
+      this.description = `${doc.data().description}`;
+      this.link_url = doc.data().link_url;
+      this.report_link_url = doc.data().report_link_url;
+      this.is_past = this.isPast(doc.data().begin_datetime);
     },
   },
 };

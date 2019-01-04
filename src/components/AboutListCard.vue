@@ -3,32 +3,32 @@
     <div class="card">
       <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
       <p class="card-title">▶︎オープンな秘密基地</p>
-			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+      <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
       <p class="card-title">▶︎クロスオーバー</p>
-			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+      <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon03.svg" class="about-list-icon">
       <p class="card-title">▶︎楽しむためのレベル上げ</p>
-			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+      <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon04.svg" class="about-list-icon">
       <p class="card-title">▶︎楽しいをつくる</p>
-			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+      <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon05.svg" class="about-list-icon">
       <p class="card-title-exception">▶︎「やってみたら楽しい」をやれる場所</p>
-			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+      <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon06.svg" class="about-list-icon">
       <p class="card-title">▶︎スマートなバカ</p>
-			<p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+      <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
   </div>
 </template>
@@ -77,14 +77,14 @@ export default {
   letter-spacing: 1px;
 }
 .event-read-more {
-	color: #ff8a7d;
-	text-align: center;
-	margin-top: 16px;
-	margin-bottom: 0px;
-	font-size: 14px;
-	font-weight: 500;
-	text-decoration: underline;
-	white-space: pre;
+  color: #ff8a7d;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  white-space: pre;
 }
 @media (min-width: 600px) {
   .flexbox {

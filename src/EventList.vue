@@ -114,6 +114,7 @@ export default {
     padding-top: 20px;
     padding-bottom: 18px;
     margin-top: 20px;
+    margin-bottom: 0px;
   }
   .text-link {
     color: #FF8A7D;

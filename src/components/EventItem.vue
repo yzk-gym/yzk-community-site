@@ -7,13 +7,16 @@
     </ul>
     <div class="event-sub">
       <div class="event-image-div">
-        <img class="event-image" :src=image_path>
+        <img v-if="image_path !== ''" class="event-image" :src=image_path>
       </div>
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
-        <router-link class="text-link" :to="{ name: 'EventDescription', params: { id: this.id } }">
-          <p class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        </router-link>
+        <div class="read-more-div">
+          <router-link class="text-link"
+                       :to="{ name: 'EventDescription', params: { id: this.id } }">
+            <p class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          </router-link>
+        </div>
       </div>
     </div>
     <div class="event-entry">
@@ -92,6 +95,7 @@ export default {
     width: 160px;
     height: 105px;
     object-fit: cover;
+    border-style:none;
   }
   .event-string {
     flex-basis: auto;
@@ -102,8 +106,9 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     overflow: hidden;
+    text-overflow: ellipsis;
     margin-top: 2px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-left: 8px;
     height: 80px;
     font-size: 14px;
@@ -111,10 +116,10 @@ export default {
     color: #009ACC;
   }
   .event-read-more {
-    display: block;
+    display: inline-block;
     text-align: right;
     margin-top: 7px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: -20px;
     font-size: 14px;
     text-decoration: underline;
@@ -123,5 +128,8 @@ export default {
   .event-entry {
     margin-right: 20px;
     margin-left: 20px;
+  }
+  .read-more-div {
+    text-align: right;
   }
 </style>
