@@ -37,7 +37,7 @@ export default {
             date: this.fromTimeStampToDate(doc.data().begin_datetime),
             time: this.fromTimeStampToTime(doc.data().begin_datetime),
             image_path: `/static/img/${doc.data().image_path}`,
-            description: `${doc.data().description}`,
+            description: this.replaceNewlineTag(doc.data().description),
             link_url: doc.data().report_link_url,
           });
       });
@@ -61,6 +61,9 @@ export default {
     },
     getNowFormattedFirebase() {
       return firebase.firestore.Timestamp.now();
+    },
+    replaceNewlineTag(str) {
+      return str.replace(/<br>/g, ' ');
     },
   },
 };
