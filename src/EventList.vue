@@ -54,7 +54,7 @@ export default {
     font-size: 30px;
     color: #009acc;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     margin-top: 20px;
   }
   .text-link {
