@@ -2,16 +2,18 @@
   <div class="event-item">
     <p class="event-title">{{ title }}</p>
     <ul class="event-datetime">
-      <li class="day"><strong>▶day</strong> {{ day }}</li>
-      <li><strong>▶time</strong> {{ time }} START</li>
+      <li class="day"><strong>▶︎day</strong> {{ day }}</li>
+      <li><strong>▶︎time</strong> {{ time }} START</li>
     </ul>
     <div class="event-sub">
-      <img class="event-image" :src=image_path>
+      <div class="event-image-div">
+        <img class="event-image" :src=image_path>
+      </div>
       <div class="event-string">
         <p class="event-description">{{ description }}</p>
-        <a :href=link_url class="text-link" target="_blank">
-          <p class="event-read-more"> &nbsp;READ MORE &nbsp; &nbsp;</p>
-        </a>
+        <router-link class="text-link" :to="{ name: 'EventDescription', params: { id: this.id } }">
+          <p class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </router-link>
       </div>
     </div>
     <div class="event-entry">
@@ -29,6 +31,7 @@ export default {
   name: 'EventItem',
   components: { EventListEntryButton },
   props: {
+    id: { type: String, require: true },
     title: { type: String, require: true },
     day: { type: String, require: true },
     time: { type: String, require: true },
@@ -82,12 +85,17 @@ export default {
     margin-left: 20px;
     margin-bottom: 20px;
   }
-  .event-image {
+  .event-image-div {
     flex-basis: 160px;
+  }
+  .event-image {
+    width: 160px;
     height: 105px;
+    object-fit: cover;
   }
   .event-string {
     flex-basis: auto;
+    width: 100%;
   }
   .event-description {
     display: -webkit-box;

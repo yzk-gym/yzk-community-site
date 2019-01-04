@@ -13,30 +13,30 @@
 </template>
 <script>
 export default {
-  name: 'TopFooter',
+  name: 'WhiteFooter',
 };
 </script>
 <style scoped>
   .p-footer {
-    background-color: #009ACC;
+    background-color: #ebebeb;
     padding-top: 55px;
   }
   .c-footer-itemlist {
     text-align: left;
-    padding: 4em 0 0 0;
+    padding: 3em 0 0 0;
   }
   .c-footer-item {
     list-style: none;
-    color: white;
+    color: #009ACC;
   }
   .c-footer-copyright {
     text-align: center;
-    color: white;
+    color: #009ACC;
     margin: 0 0;
     padding: 2em;
   }
   a {
     text-decoration: none;
-    color: #ffffff;
+    color: #009ACC;
   }
 </style>

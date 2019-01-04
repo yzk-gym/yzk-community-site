@@ -3,6 +3,7 @@
     <past-event-item
       v-for="item in EventListItems"
       v-bind:key="item.id"
+      :id=item.id
       :title=item.title
       :day=item.date
       :time=item.time
@@ -28,20 +29,21 @@ export default {
   },
   created() {
     this.EventListItems = [];
-    firestore.collection('events').where('begin_datetime', '<=', this.getNowFormattedFirebase()).get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        this.EventListItems.push(
-          {
-            id: doc.id,
-            title: doc.data().title,
-            date: this.fromTimeStampToDate(doc.data().begin_datetime),
-            time: this.fromTimeStampToTime(doc.data().begin_datetime),
-            image_path: `/static/img/${doc.data().image_path}`,
-            description: `${doc.data().description}`,
-            link_url: doc.data().report_link_url,
-          });
+    firestore.collection('events').where('begin_datetime', '<=', this.getNowFormattedFirebase()).orderBy('begin_datetime', 'desc').get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.EventListItems.push(
+            {
+              id: doc.id,
+              title: doc.data().title,
+              date: this.fromTimeStampToDate(doc.data().begin_datetime),
+              time: this.fromTimeStampToTime(doc.data().begin_datetime),
+              image_path: `/static/img/${doc.data().image_path}`,
+              description: this.replaceNewlineTag(doc.data().description),
+              link_url: doc.data().report_link_url,
+            });
+        });
       });
-    });
   },
   methods: {
     fromTimeStampToDate(date) {
@@ -61,6 +63,9 @@ export default {
     },
     getNowFormattedFirebase() {
       return firebase.firestore.Timestamp.now();
+    },
+    replaceNewlineTag(str) {
+      return str.replace(/<br>/g, ' ');
     },
   },
 };

@@ -4,6 +4,7 @@ import Top from '../Top';
 import AboutList from '../AboutList';
 import EventList from '../EventList';
 import PastEventList from '../PastEventList';
+import EventDescription from '../EventDescription';
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/past_events',
       name: 'PastEventList',
       component: PastEventList,
+    },
+    {
+      path: '/events/:id',
+      name: 'EventDescription',
+      component: EventDescription,
     },
   ],
   scrollBehavior() {
