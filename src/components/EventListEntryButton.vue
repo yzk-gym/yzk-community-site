@@ -21,5 +21,6 @@ export default {
   .c-button-text {
     padding:0.5em;
     color: white;
+    font-weight: bold;
   }
 </style>
