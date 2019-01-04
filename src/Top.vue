@@ -23,6 +23,7 @@
       <div class="c-next-event-description">
         <description v-bind:title="nextEvent['title']"
                      v-bind:description="nextEvent['description']"
+                     v-bind:id="nextEvent['id']"
                      class="c-next-event-description-text">
         </description>
       </div>
