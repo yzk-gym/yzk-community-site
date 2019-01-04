@@ -1,10 +1,13 @@
 <template>
   <div id="about-list">
-    <content-title title="Welcome to YZKAMP!" class="c-description-title"></content-title>
-    <p class="title-description">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-    <div class="about-list-card">
+    <contents-header></contents-header>
+    <section class="title">
+      <content-title title="Welcome to YZKAMP!" class="c-description-title"></content-title>
+      <p class="title-description">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </section>
+    <section class="about-list-card">
       <about-list-card></about-list-card>
-    </div>
+    </section>
     <div>
       <p class="invite-text">参加してみたくなったら
         <br>一緒に遊ぼう！
@@ -21,6 +24,7 @@ import TopFooter from './components/layouts/TopFooter';
 import ContentTitle from './components/ContentTitle';
 import AboutListButton from './components/AboutListButton';
 import AboutListCard from './components/AboutListCard';
+import ContentsHeader from './components/layouts/ContentsHeader';
 
 export default {
   name: 'AboutList',
@@ -29,10 +33,11 @@ export default {
     ContentTitle,
     TopFooter,
     AboutListCard,
+    ContentsHeader,
   },
 };
 </script>
-<style scoded>
+<style scoped>
 #about-list {
   width: 100vw;
   background-color: #009acc;
