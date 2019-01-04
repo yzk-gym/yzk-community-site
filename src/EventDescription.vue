@@ -11,7 +11,7 @@
       <triangle-property title="time" :description="begin_time + ' START'"></triangle-property>
       <triangle-property title="place" :description="place"></triangle-property>
     </div>
-    {{ description }}
+    <p v-html="description" class="event-description"></p>
     {{ link_url }}
     <top-footer></top-footer>
   </div>
@@ -98,6 +98,12 @@ export default {
     object-fit: cover;
   }
   .property-div {
-    margin: 30px 50px;
+    margin: 40px 50px;
+  }
+  .event-description {
+    text-align: left;
+    margin: 30px 25px;
+    color: #ffffff;
+    font-size: 14px;
   }
 </style>
