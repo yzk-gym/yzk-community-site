@@ -20,9 +20,10 @@
       </div>
     </div>
     <div class="event-entry">
-      <a :href=link_url target="_blank">
-        <EventListEntryButton text="参加する"></EventListEntryButton>
+      <a v-show="link_url !== ''" :href=link_url target="_blank">
+        <EventListEntryButton v-show="link_url !== ''" text="参加する"></EventListEntryButton>
       </a>
+      <span v-show="link_url === ''" class="no-rec">参加ページはまだないよ</span>
     </div>
   </div>
 </template>
@@ -57,6 +58,13 @@ export default {
   }
   .text-link {
     color: #FF8A7D;
+  }
+  .no-rec {
+    display: block;
+    color: #FF8A7D;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 15px;
   }
   .event-title {
     font-size: 18px;

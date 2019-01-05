@@ -14,25 +14,26 @@
     <p v-html="description" class="event-description"></p>
     <template v-if="is_past === true">
       <a v-show="report_link_url !== ''" :href=report_link_url target="_blank">
-        <Button v-show="link_url !== ''" text="レポートを見る"></Button>
+        <Button v-show="link_url !== ''" text="レポートを見る" class="button-text"></Button>
       </a>
-      <span v-show="report_link_url === ''" class="no-report">このイベントの開催レポートはありません</span>
+      <span v-show="report_link_url === ''" class="no-report">開催レポートはまだないよ</span>
     </template>
     <template v-else>
-      <a :href="link_url" target="_blank">
-        <Button text="参加する
+      <a v-show="link_url !== ''" :href="link_url" target="_blank">
+        <Button v-show="link_url !== ''" text="参加する
     (TwiPla に飛ぶよ)" class="button-text"></Button>
       </a>
+      <span v-show="link_url === ''" class="no-report">参加ページはまだないよ</span>
     </template>
     <div class="footer-section">
       <template v-if="is_past === true">
         <router-link to="/past_events">
-          <AboutListButton class="about-list-button" text="◀︎過去の開催イベント一覧へ"></AboutListButton>
+          <AboutListButton class="about-list-button" text="◀︎過去の開催イベントへ"></AboutListButton>
         </router-link>
       </template>
       <template v-else>
         <router-link to="/events">
-          <AboutListButton class="about-list-button" text="◀︎今後の開催イベント一覧へ"></AboutListButton>
+          <AboutListButton class="about-list-button" text="◀︎今後の開催イベントへ"></AboutListButton>
         </router-link>
       </template>
       <white-footer></white-footer>
@@ -88,6 +89,9 @@ export default {
       const WeekChars = ['日', '月', '火', '水', '木', '金', '土'];
       const d = new Date(date.seconds * 1000);
       const year = d.getFullYear();
+      if (year === 9999) {
+        return '日付未定';
+      }
       const month = (`0${d.getMonth() + 1}`).slice(-2);
       const day = (`0${d.getDate()}`).slice(-2);
       const wday = d.getDay();
@@ -95,6 +99,9 @@ export default {
     },
     fromTimeStampToTime(date) {
       const d = new Date(date.seconds * 1000);
+      if (d.getFullYear() === 9999) {
+        return '時間未定';
+      }
       const hour = (`0${d.getHours()}`).slice(-2);
       const min = (`0${d.getMinutes()}`).slice(-2);
       return `${hour}:${min}`;
@@ -109,7 +116,7 @@ export default {
       this.date = this.fromTimeStampToDate(doc.data().begin_datetime);
       this.begin_time = this.fromTimeStampToTime(doc.data().begin_datetime);
       this.image_path = `/static/img/${doc.data().image_path}`;
-      this.place = doc.data().place;
+      this.place = doc.data().place === '' ? '場所未定' : doc.data().place;
       this.description = `${doc.data().description}`;
       this.link_url = doc.data().link_url;
       this.report_link_url = doc.data().report_link_url;

@@ -4,7 +4,7 @@
     <section class="title-section">
       <content-title2 title="PAST EVENTs"></content-title2>
       <p class="title-desctiption">
-        柚希ジムの過去のイベント開催リストです。<br>
+        YZKAMPの過去のイベント開催リストです。<br>
         開催レポートが読めます。<br>
         今後の開催イベントは<router-link to="/events" class="text-link">こちら</router-link>
       </p>
