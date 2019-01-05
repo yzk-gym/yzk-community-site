@@ -85,7 +85,7 @@ a {
 }
 .c-next-event-date-text{
   position: absolute;
-  top: 0.5em;
+  top: 50px;
   right: 1em;
   color: white;
   font-family: 'fututa';
@@ -101,7 +101,7 @@ a {
 }
 .c-next-event-description {
   position: relative;
-  padding: 200px 0 0 0 ;
+  padding: 216px 0 0 0 ;
   text-align: center;
 }
 .c-next-event-description-text {
