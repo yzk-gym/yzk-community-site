@@ -130,7 +130,7 @@ export default {
               date: this.fromTimeStampToDate(doc.data().begin_datetime),
               time: this.fromTimeStampToTime(doc.data().begin_datetime),
               image_path: `/static/img/${doc.data().image_path}`,
-              description: `${doc.data().description}`,
+              description: this.replaceNewlineTag(doc.data().description),
               link_url: doc.data().link_url,
             };
         });
@@ -147,7 +147,7 @@ export default {
               date: this.fromTimeStampToOnlyDate(doc.data().begin_datetime),
               weekday: this.fromTimeStampToDay(doc.data().begin_datetime),
               image_path: `/static/img/${doc.data().image_path}`,
-              description: `${doc.data().description}`,
+              description: this.replaceNewlineTag(doc.data().description),
               link_url: doc.data().link_url,
               is_first: true,
             };
@@ -167,10 +167,16 @@ export default {
       const day = (`0${d.getDate()}`).slice(-2);
       return `${month}/${day}`;
     },
+    replaceNewlineTag(str) {
+      return str.replace(/<br>/g, ' ');
+    },
     fromTimeStampToDate(date) {
       const WeekChars = ['日', '月', '火', '水', '木', '金', '土'];
       const d = new Date(date.seconds * 1000);
       const year = d.getFullYear();
+      if (year === 9999) {
+        return '日付未定';
+      }
       const month = (`0${d.getMonth() + 1}`).slice(-2);
       const day = (`0${d.getDate()}`).slice(-2);
       const wday = d.getDay();
