@@ -118,7 +118,6 @@ export default {
     };
   },
   created() {
-    this.pastEvent = '';
     firestore.collection('events').where('begin_datetime', '<=', this.getNowFormattedFirebase()).orderBy('begin_datetime', 'desc').limit(1)
       .get()
       .then((querySnapshot) => {
@@ -130,12 +129,11 @@ export default {
               date: this.fromTimeStampToDate(doc.data().begin_datetime),
               time: this.fromTimeStampToTime(doc.data().begin_datetime),
               image_path: `/static/img/${doc.data().image_path}`,
-              description: this.replaceNewlineTag(doc.data().description),
+              description: doc.data().description,
               link_url: doc.data().link_url,
             };
         });
       });
-    this.nextEvent = '';
     firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).orderBy('begin_datetime').limit(1)
       .get()
       .then((querySnapshot) => {
@@ -147,9 +145,8 @@ export default {
               date: this.fromTimeStampToOnlyDate(doc.data().begin_datetime),
               weekday: this.fromTimeStampToDay(doc.data().begin_datetime),
               image_path: `/static/img/${doc.data().image_path}`,
-              description: this.replaceNewlineTag(doc.data().description),
+              description: doc.data().description,
               link_url: doc.data().link_url,
-              is_first: true,
             };
         });
       });
