@@ -13,6 +13,10 @@
     </div>
     <p v-html="description" class="event-description"></p>
     <template v-if="is_past === true">
+      <a v-show="link_url !== ''" :href="link_url" target="_blank">
+        <Button v-show="link_url !== ''" text="参加募集ページを見る" class="button-text"></Button>
+      </a>
+      <span v-show="link_url === ''" class="no-report">参加募集ページはないよ</span>
       <a v-show="report_link_url !== ''" :href=report_link_url target="_blank">
         <Button v-show="link_url !== ''" text="レポートを見る" class="button-text"></Button>
       </a>
@@ -20,8 +24,7 @@
     </template>
     <template v-else>
       <a v-show="link_url !== ''" :href="link_url" target="_blank">
-        <Button v-show="link_url !== ''" text="参加する
-    (TwiPla に飛ぶよ)" class="button-text"></Button>
+        <Button v-show="link_url !== ''" text="参加する" class="button-text"></Button>
       </a>
       <span v-show="link_url === ''" class="no-report">参加ページはまだないよ</span>
     </template>

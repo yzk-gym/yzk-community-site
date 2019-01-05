@@ -79,7 +79,8 @@ export default {
             time: this.fromTimeStampToTime(doc.data().begin_datetime),
             image_path: `/static/img/${doc.data().image_path}`,
             description: this.replaceNewlineTag(doc.data().description),
-            link_url: doc.data().report_link_url,
+            link_url: doc.data().link_url,
+            report_link_url: doc.data().report_link_url,
           });
       });
       this.EventItems = eventListItems;
