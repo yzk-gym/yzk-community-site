@@ -5,9 +5,11 @@
       <p class="card-title">▶︎オープンな秘密基地</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
-    <div class="open-modal" v-if="openModal">
-      <card-modal01 title="︎オープンな秘密基地" description="テキストテキストテキストテキストテキスト"></card-modal01>
-    </div>
+    <transition name="fade">
+      <div class="open-modal" v-if="openModal">
+        <card-modal01 title="︎オープンな秘密基地" description="テキストテキストテキストテキストテキスト"></card-modal01>
+      </div>
+    </transition>
     <div class="card">
       <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
       <p class="card-title">▶︎クロスオーバー</p>
@@ -100,11 +102,30 @@ export default {
 .open-modal {
   position: absolute;
   top: 100px;
-  max-width: 310px;
+  max-width: 280px;
   padding: 20px;
   border-radius: 4px;
   background-color:rgba(255,255,255,0.9);
   z-index: 1;
+}
+/* モーダル表示/非表示のアニメーション */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: opacity 300ms ease-out;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: opacity 300ms ease-out;
 }
 @media (min-width: 600px) {
   .flexbox {
