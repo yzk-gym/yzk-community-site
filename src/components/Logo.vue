@@ -11,14 +11,18 @@ export default {
 </script>
 <style scoped>
   .p-logo{
-    height: 150px;
+    /*height: 110px;*/
     text-align: center;
     color: white;
   }
   .c-logo-cube {
-    max-height: 45%;
+    display: block;
+    height: 80px;
+    margin: 0 auto 10px auto;
   }
   .c-logo-text {
-    max-height: 40%;
+    display: block;
+    height: 55px;
+    margin: 0 auto 10px auto;
   }
 </style>
