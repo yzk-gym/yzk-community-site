@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-      <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
+      <img :src="image" class="about-list-icon">
       <p class="card-title">▶{{ title }}</p>
       <p class="card-description">
         {{ description }}
@@ -14,6 +14,7 @@ export default {
   props: {
     title: { type: String, require: true },
     description: { type: String, require: true },
+    image: { type: String, require: true },
   },
   data() {
     return {
