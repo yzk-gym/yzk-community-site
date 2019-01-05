@@ -1,16 +1,20 @@
 <template>
-  <div class="card">
-    <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
-    <p class="card-title">▶︎オープンな秘密基地</p>
-    <p class="card-description">
-      テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-    </p>
-    <p class="close" @click="closeModal">&nbsp;&nbsp;閉じる&nbsp;&nbsp;</p>
-  </div>
+    <div class="card">
+      <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
+      <p class="card-title">▶{{ title }}</p>
+      <p class="card-description">
+        {{ description }}
+      </p>
+      <p class="close" @click="closeModal">&nbsp;&nbsp;閉じる&nbsp;&nbsp;</p>
+    </div>
 </template>
 <script>
 export default {
   name: 'CardModal01',
+  props: {
+    title: { type: String, require: true },
+    description: { type: String, require: true },
+  },
   data() {
     return {
       closeModal: true,

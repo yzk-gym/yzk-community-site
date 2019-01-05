@@ -6,7 +6,7 @@
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <div class="open-modal" v-if="openModal">
-      <card-modal01></card-modal01>
+      <card-modal01 title="︎オープンな秘密基地" description="テキストテキストテキストテキストテキスト"></card-modal01>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
