@@ -13,7 +13,7 @@ export default {
 </script>
 <style scoped>
   .p-button {
-    margin: 0 4em;
+    margin: 0 3em;
     background-color: #FF8A7D;
     border-radius: 0.2em 0.2em 0.2em 0.2em;
     text-align: center;

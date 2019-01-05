@@ -17,10 +17,10 @@ export default{
   }
   .c-content-title {
     margin: 0;
-    padding:0 1em 0 0.5em;
+    padding:0 1em 0 1em;
     font-family: 'fututa';
-    border-bottom: solid white 1px;
-    color: white;
+    border-bottom: solid #ebebeb 2px;
+    color: #ebebeb;
     font-size: 28px;
   }
 </style>

@@ -9,12 +9,10 @@ export default{
 };
 </script>
 <style scoped>
-  .p-white-readmore {
-    padding-bottom: 0.2em;
-  }
   .c-white-readmore-text {
     color: white;
-    border-bottom: solid white 1px;
-    font-family: 'fututa';
+    font-size: 14px;
+    border-bottom: solid #FF8A7D 2px;
+    margin: 0 0 0 0;
   }
 </style>
