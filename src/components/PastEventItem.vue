@@ -21,9 +21,13 @@
     </div>
     <div class="event-entry">
       <a v-show="link_url !== ''" :href=link_url target="_blank">
-        <EventListEntryButton v-show="link_url !== ''" text="レポートを見る"></EventListEntryButton>
+        <EventListEntryButton v-show="link_url !== ''" text="参加募集ページを見る"></EventListEntryButton>
       </a>
-      <span v-show="link_url === ''" class="no-report">開催レポートはまだないよ</span>
+      <span v-show="link_url === ''" class="no-report">参加募集ページはないよ</span>
+      <a v-show="report_link_url !== ''" :href=report_link_url target="_blank">
+        <EventListEntryButton v-show="report_link_url !== ''" text="レポートを見る"></EventListEntryButton>
+      </a>
+      <span v-show="report_link_url === ''" class="no-report">開催レポートはまだないよ</span>
     </div>
   </div>
 </template>
@@ -42,6 +46,7 @@ export default {
     image_path: { type: String, require: true },
     description: { type: String, require: true },
     link_url: { type: String, require: true },
+    report_link_url: { type: String, require: true },
   },
 };
 </script>
