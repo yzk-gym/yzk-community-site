@@ -36,16 +36,16 @@
   </div>
 </template>
 <script>
-import CardModal01 from './CardModal01.vue'
+import CardModal01 from './CardModal01';
 
 export default {
   components: { CardModal01 },
   data() {
     return {
-      openModal: false
-    }
+      openModal: false,
+    };
   },
-}
+};
 </script>
 
 <style scoped>
