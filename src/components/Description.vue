@@ -2,7 +2,7 @@
   <div class="p-description">
     <span v-if="blank"></span>
     <p class="p-description-title">▶︎{{ title }} </p>
-    <p v-html="description" class="p-description-text"></p>
+    <p class="p-description-text">{{ description }}</p>
     <div v-show="readmore === true" class="read-more-div">
       <router-link v-show="readmore === true" class="text-link"
                    :to="{ name: 'EventDescription', params: { id: this.id } }">
