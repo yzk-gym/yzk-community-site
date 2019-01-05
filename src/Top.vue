@@ -113,8 +113,8 @@ export default {
     Description },
   data() {
     return {
-      pastEvent: {},
-      nextEvent: {},
+      pastEvent: { id: null, title: '', date: '', time: '', image_path: '', description: '', link_url: '' },
+      nextEvent: { id: null, title: '', date: '', time: '', image_path: '', description: '', link_url: '' },
     };
   },
   created() {
