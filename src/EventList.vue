@@ -4,7 +4,7 @@
     <section class="title-section">
       <content-title2 title="SCHEDULE"></content-title2>
       <p class="title-desctiption">
-        柚希ジムの今後のイベント開催リストです。<br>
+        YZKAMPの今後のイベント開催リストです。<br>
         やってみたいものがあったら、<br>
         気軽に参加してみよう！<br>
         過去の開催イベントは<router-link to="/past_events" class="text-link">こちら</router-link>
@@ -53,6 +53,9 @@ export default {
       const WeekChars = ['日', '月', '火', '水', '木', '金', '土'];
       const d = new Date(date.seconds * 1000);
       const year = d.getFullYear();
+      if (year === 9999) {
+        return '日付未定';
+      }
       const month = (`0${d.getMonth() + 1}`).slice(-2);
       const day = (`0${d.getDate()}`).slice(-2);
       const wday = d.getDay();
@@ -60,6 +63,9 @@ export default {
     },
     fromTimeStampToTime(date) {
       const d = new Date(date.seconds * 1000);
+      if (d.getFullYear() === 9999) {
+        return '時間未定';
+      }
       const hour = (`0${d.getHours()}`).slice(-2);
       const min = (`0${d.getMinutes()}`).slice(-2);
       return `${hour}:${min}`;

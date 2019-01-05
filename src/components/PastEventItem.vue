@@ -23,7 +23,7 @@
       <a v-show="link_url !== ''" :href=link_url target="_blank">
         <EventListEntryButton v-show="link_url !== ''" text="レポートを見る"></EventListEntryButton>
       </a>
-      <span v-show="link_url === ''" class="no-report">このイベントのレポートはありません</span>
+      <span v-show="link_url === ''" class="no-report">開催レポートはまだないよ</span>
     </div>
   </div>
 </template>
