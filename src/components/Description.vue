@@ -3,10 +3,10 @@
     <span v-if="blank"></span>
     <p class="p-description-title">▶︎{{ title }} </p>
     <p class="p-description-text">{{ description }}</p>
-    <div v-show="readmore === true" class="read-more-div">
-      <router-link v-show="readmore === true" class="text-link"
+    <div v-show="readmore === true && id !== null" class="read-more-div">
+      <router-link v-show="readmore === true && id !== null" class="text-link"
                    :to="{ name: 'EventDescription', params: { id: this.id } }">
-        <p v-show="readmore === true"
+        <p v-show="readmore === true && id !== null"
            class="event-read-more">&nbsp;READ MORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </router-link>
     </div>
