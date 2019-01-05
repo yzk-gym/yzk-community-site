@@ -9,7 +9,8 @@
       :time=item.time
       :image_path=item.image_path
       :description=item.description
-      :link_url=item.link_url>
+      :link_url=item.link_url
+      :report_link_url=item.report_link_url>
     </past-event-item>
   </section>
 </template>

@@ -114,7 +114,7 @@ export default {
   data() {
     return {
       pastEvent: { id: null, title: '', date: '', time: '', image_path: '', description: '', link_url: '' },
-      nextEvent: { id: null, title: '', date: '', time: '', image_path: '', description: '', link_url: '' },
+      nextEvent: { id: null, title: '', date: '', time: '', image_path: '', description: '', link_url: '', is_first: false },
     };
   },
   created() {
@@ -147,6 +147,7 @@ export default {
               image_path: `/static/img/${doc.data().image_path}`,
               description: doc.data().description,
               link_url: doc.data().link_url,
+              is_first: true,
             };
         });
       });
@@ -196,7 +197,7 @@ export default {
   position: absolute;
   height: 180px;
   width: 300px;
-  top: 2em;
+  top: 50px;
   left: 0;
   z-index: 1;
   background-color: #000000;
