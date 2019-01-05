@@ -1,9 +1,12 @@
 <template>
   <div class="wrap">
-    <div class="card">
+    <div class="card" @click="openModal = !openModal">
       <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
       <p class="card-title">▶︎オープンな秘密基地</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
+    </div>
+    <div class="open-modal" v-if="openModal">
+      <card-modal01></card-modal01>
     </div>
     <div class="card">
       <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
@@ -33,10 +36,18 @@
   </div>
 </template>
 <script>
+import CardModal01 from './CardModal01.vue'
+
 export default {
-  name: 'AboutListCard',
-};
+  components: { CardModal01 },
+  data() {
+    return {
+      openModal: false
+    }
+  },
+}
 </script>
+
 <style scoped>
 .about-list-icon {
   margin-top: 1em;
@@ -85,6 +96,15 @@ export default {
   font-weight: 500;
   text-decoration: underline;
   white-space: pre;
+}
+.open-modal {
+  position: absolute;
+  top: 100px;
+  max-width: 310px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color:rgba(255,255,255,0.9);
+  z-index: 1;
 }
 @media (min-width: 600px) {
   .flexbox {
