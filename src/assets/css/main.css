@@ -47,11 +47,17 @@ a {
   padding: 1em;
 }
 .p-top-text {
-  color: white;
+  font-family: 'yzk-font';
+  font-weight: bold;
+  line-height: 22px;
+  font-size: 14px;
+  color: #ebebeb;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .top-tent {
-  width: 90vw;
-  height: auto;
+  width: auto;
+  height: 200px;
 }
 .p-top-menu {
   position: absolute;
@@ -67,36 +73,35 @@ a {
   background-color: #0085B3;
 }
 .c-next-event-title {
-  color: white;
+  color: #ebebeb;
   font-size: 28px;
   position: absolute;
   top: -0.5em;
+  margin-left: -15px;
 }
 .c-next-event-button {
-  margin: 0em;
-}
-.c-next-event-date {
-  text-align: right;
-  z-index: 100;
+  margin-top: 24px;
+  padding-bottom: 15px;
 }
 .c-next-event-date-text{
   position: absolute;
   top: 0.5em;
   right: 1em;
   color: white;
+  font-family: 'fututa';
   font-size: 34px;
+  text-align: right;
+  z-index: 100;
 }
 .c-banner{
-  position: absolute;
-  height: 30%;
-  width: 80%;
-  top: 2em;
-  left: 0;
-  background-color: lightgray;
-  z-index: 0;
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  opacity: .7;
 }
 .c-next-event-description {
-  padding: 40% 0 0 0;
+  position: relative;
+  padding: 200px 0 0 0 ;
   text-align: center;
 }
 .c-next-event-description-text {
@@ -111,18 +116,28 @@ a {
 }
 .c-lead-logo {
   margin: 0.5em;
-  width:4em;
+  width: auto;
+  height: 55px;
 }
 .c-lead-title {
-  color: white;
-  margin: 0 2em;
+  color: #ebebeb;
+  margin: 0;
 }
 .c-lead-text {
-  color: white;
+  color: #ebebeb;
+  font-family: yzk-font;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
 }
 .c-description-readmore {
-  margin: 0 35%;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
   color: white;
+  margin-top: 8px;
+  margin-bottom: 30px;
 }
 
 
@@ -132,17 +147,21 @@ a {
   background-color: #0085B3;
 }
 .c-schedule-title {
+  display: inline-block;
   text-align: left;
+  margin-top: 30px;
+  margin-left: -20px;
   margin-right: 50%;
-  color: white;
+  color: #ebebeb;
 }
 .c-schedule-description {
+  margin-top: 30px;
   margin-left: 20%;
   background-color: #EBEBEB;
 }
 .c-schedule-button {
   margin: 0em;
-  padding: 1em;
+  padding: 14px 0 20px 0;
 }
 .p-calendar iframe {
   margin: 0 10%;
@@ -163,8 +182,10 @@ a {
 }
 
 .c-past-events-title{
-  margin: 0 0 0 45%;
-  padding-right: 1em;
+  display: inline-block;
+  margin: 30px 0 0px auto;
+  padding-right: 20px;
+  padding-left: 30px;
   text-align: right;
   color: #009ACC;
   border-bottom: solid #009ACC 2px;
@@ -173,20 +194,33 @@ a {
 }
 .c-past-events-description {
   text-align: left;
-  margin: 2em 20% 0 0;
-  color: white;
+  width: 80%;
+  margin: 30px 20% 0 0;
+  color: #ebebeb;
   background-color: #009ACC;
 }
 .c-past-events-description-title {
   margin: 0;
-  padding: 1em 1em 0.5em;
+  padding: 1em 15px 0;
   font-weight: bold;
+  text-align: left;
+  text-overflow: ellipsis;
 }
 .c-past-events-description-text {
-  margin: 0;
-  padding: 0.5em 1em 1em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 8px 18px 0px 18px;
+  height: 48px;
+  text-align: left;
+  font-size: 14px;
 }
 .c-past-events-image {
   margin:1.5em 2em 0;
-  width: 80%;
+  height: 180px;
+  width: 300px;
+  object-fit: cover;
+  opacity: .7;
 }

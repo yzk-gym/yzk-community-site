@@ -9,17 +9,13 @@
     </header>
     <div class="p-top-image">
       <logo></logo>
-      <p class="p-top-text">ここに<br>詳細<br>書く</p>
+      <p class="p-top-text">コピーが入りますダミーです。<br>スッキリ端的にわかりやすく。</p>
     <img src="./assets/img/tent.png" class="top-tent">
     </div>
     <div class="p-next-event">
-      <ContentTitle class="c-next-event-title" title="NEXT EVENT"></ContentTitle>
-      <div class="c-banner">
-        <p>バナー的な</p>
-      </div>
-      <div class="c-next-event-date">
-        <p class="c-next-event-date-text">{{ nextEvent['date'] }}<br>{{ nextEvent['weekday'] }}.</p>
-      </div>
+      <content-title class="c-next-event-title" title="NEXT EVENT"></content-title>
+      <div class="img-cover"><img :src="nextEvent['image_path']" class="c-banner"></div>
+      <p class="c-next-event-date-text">{{ nextEvent['date'] }}<br>{{ nextEvent['weekday'] }}.</p>
       <div class="c-next-event-description">
         <description v-bind:title="nextEvent['title']"
                      v-bind:description="nextEvent['description']"
@@ -35,14 +31,13 @@
           </a>
         </template>
       </div>
-      <span></span>
     </div>
     <div class="p-lead">
       <img src="./assets/img/cube_logo_white.svg" class="c-lead-logo">
-      <content-title title="Welcome to YZKAMP!" class="c-lead-title"></content-title>
-      <p class="c-lead-text">詳細を
-        <br>ここに
-        <br>かく
+      <content-title2 title="Welcome to YZKAMP!" class="c-lead-title"></content-title2>
+      <p class="c-lead-text">コピーが入ります。
+        <br>ダミーコピーです。
+        <br>スッキリ簡潔にわかりやすく。
       </p>
       <div class="c-description-readmore">
         <router-link to="/about">
@@ -51,9 +46,7 @@
       </div>
     </div>
     <div class="p-schedule">
-      <span></span>
       <content-title title="SCHEDULE" class="c-schedule-title"></content-title>
-      <span></span>
       <Description v-bind:readmore="false"
                    title="今後のイベントスケジュール"
                    description="これから一ヶ月先のスケジュール。<br>あなたの参加をお待ちしております！"
@@ -70,29 +63,27 @@
       </div>
 -->
       <div class="c-schedule-button">
-        <a>
-          <router-link to="/events">
-            <Button text="一覧を見る"></Button>
-          </router-link>
-        </a>
+        <router-link to="/events">
+          <Button text="一覧を見る"></Button>
+        </router-link>
       </div>
     </div>
     <div class="p-past-events">
-      <span></span>
-        <p class="c-past-events-title">PAST EVENTs</p>
-        <div class="c-past-events-description">
-          <p class="c-past-events-description-title">▶︎過去に開催したイベント</p>
-          <p class="c-past-events-description-text">
-            これまでにYZKAMPが開催してきたイベントたち。
-          </p>
+      <div class="past-event-title-div">
+        <p class="c-past-events-title">&nbsp;&nbsp;&nbsp;&nbsp;PAST EVENTs</p>
+      </div>
+      <div class="c-past-events-description">
+        <p class="c-past-events-description-title">▶︎過去に開催したイベント</p>
+        <p class="c-past-events-description-text">
+          これまでにYZKAMPが開催してきたイベントたち。
+        </p>
       </div>
       <img class="c-past-events-image" :src="pastEvent['image_path']">
-        <a>
-          <router-link to="/past_events">
-            <Button text="一覧を見る"></Button>
-          </router-link>
-        </a>
-      <span></span>
+      <div class="c-past-events-button">
+        <router-link to="/past_events">
+          <Button text="一覧を見る"></Button>
+        </router-link>
+      </div>
     </div>
     <top-footer></top-footer>
   </div>
@@ -102,6 +93,7 @@ import firebase from 'firebase';
 import Logo from './components/Logo';
 import TopFooter from './components/layouts/TopFooter';
 import ContentTitle from './components/ContentTitle';
+import ContentTitle2 from './components/ContentTitle2';
 import ReadMore from './components/ReadMore';
 import Button from './components/Button';
 import Description from './components/Description';
@@ -115,6 +107,7 @@ export default {
     Button,
     ReadMore,
     ContentTitle,
+    ContentTitle2,
     TopFooter,
     Logo,
     Description },
@@ -195,4 +188,21 @@ export default {
   },
 };
 </script>
-
+<style scoped>
+.img-cover {
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 2em;
+  left: 0;
+  z-index: 1;
+  background-color: #000000;
+}
+.past-event-title-div {
+  text-align: right;
+}
+.c-past-events-button {
+  margin: 0em;
+  padding: 14px 0 20px 0;
+}
+</style>
