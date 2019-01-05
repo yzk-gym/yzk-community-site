@@ -64,6 +64,7 @@ export default {
     z-index: 30;
   }
   .c-hamburger-menu span {
+    margin: 0 0.5em;
     display: inline-block;
     transition: all .4s;
     box-sizing: border-box;
@@ -84,7 +85,7 @@ export default {
   }
   .c-hamburger-menu.is-active span:nth-of-type(3) {
     -webkit-transform: translateY(-20px) rotate(45deg);
-    transform: translateY(-20px) rotate(45deg);
+    transform: translateY(-18px) rotate(45deg);
   }
   .c-menu-list {
     pointer-events: none;
