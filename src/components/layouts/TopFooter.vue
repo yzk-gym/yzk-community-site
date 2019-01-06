@@ -19,7 +19,7 @@ export default {
 <style scoped>
   .p-footer {
     background-color: #009ACC;
-    padding-top: 55px;
+    padding-top: 40px;
   }
   .c-footer-itemlist {
     text-align: left;
