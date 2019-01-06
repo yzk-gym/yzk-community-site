@@ -17,13 +17,13 @@ export default {
     margin: 0 2em;
     font-family: 'fututa';
     padding-bottom: 0px;
-    color: #ffffff;
+    color: #ebebeb;
     font-size: 28px;
     line-height: 1em;
   }
   .under-line {
     margin: -4px 2.5em 0px;
     padding: 0px 0px;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #ebebeb;
   }
 </style>
