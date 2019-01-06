@@ -4,7 +4,7 @@
     </div>
     <div class="card">
       <img :src="image" class="about-list-icon">
-      <p class="card-title">▶{{ title }}</p>
+      <p class="card-title">{{ title }}</p>
       <p class="card-description">
         {{ description }}
       </p>
@@ -32,7 +32,8 @@ export default {
 </script>
 <style scoped>
 .p-card {
-  position: relative;
+  position: fixed;
+  top: 80px;
   height: 100vh;
   background-color: transparent;
 }
@@ -45,9 +46,10 @@ export default {
   position: absolute;
   top:0;
   background-color:white;
-  margin: 10px 2.5em;
-  width: auto;
-  height: 30em;
+  opacity: .9;
+  margin: 10px 5%;
+  width: 90%;
+  height: 82%;
 }
 .about-list-icon {
   padding: 1em;
