@@ -146,7 +146,7 @@ export default {
   }
   .event-image {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
   }
   .property-div {
