@@ -90,7 +90,7 @@ export default {
 </script>
 <style scoped>
   #events {
-    width: 100vw;
+    width: 100%;
     background-color: #009ACC;
   }
   .title-section {

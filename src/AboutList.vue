@@ -41,7 +41,7 @@ export default {
 </script>
 <style scoped>
 #about-list {
-  width: 100vw;
+  width: 100%;
   background-color: #009acc;
 }
 .c-description-title {
