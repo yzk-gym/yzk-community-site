@@ -50,6 +50,7 @@ a {
   font-family: 'yzk-font';
   font-weight: bold;
   line-height: 22px;
+  letter-spacing: 2px;
   font-size: 14px;
   color: #ebebeb;
   margin-top: 0px;
@@ -91,7 +92,7 @@ a {
   font-family: 'fututa';
   font-size: 34px;
   text-align: right;
-  z-index: 100;
+  z-index: 10;
 }
 .c-banner{
   height: 180px;
@@ -126,10 +127,11 @@ a {
 .c-lead-text {
   color: #ebebeb;
   font-family: yzk-font;
-  margin-top: 18px;
+  margin-top: 20px;
   font-size: 14px;
   font-weight: bold;
   line-height: 22px;
+  letter-spacing: 1px;
 }
 .c-description-readmore {
   display: inline-block;

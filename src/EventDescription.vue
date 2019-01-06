@@ -36,7 +36,7 @@
       </template>
       <template v-else>
         <router-link to="/events">
-          <AboutListButton class="about-list-button" text="◀︎今後の開催イベントへ"></AboutListButton>
+          <AboutListButton class="about-list-button" text="◀︎イベントスケジュールへ"></AboutListButton>
         </router-link>
       </template>
       <white-footer></white-footer>
@@ -139,7 +139,7 @@ export default {
     text-align: center;
   }
   .event-title {
-    color: #ffffff;
+    color: #ebebeb;
     font-size: 20px;
     font-weight: bold;
     margin-top: 30px;
@@ -155,7 +155,7 @@ export default {
   .event-description {
     text-align: left;
     margin: 50px 25px;
-    color: #ffffff;
+    color: #ebebeb;
     font-size: 14px;
     line-height: 18px;
   }

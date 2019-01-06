@@ -103,7 +103,7 @@ export default {
     font-family: "yzk-font";
     font-size: 13px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ebebeb;
     line-height: 24px;
     letter-spacing: 1px;
   }
