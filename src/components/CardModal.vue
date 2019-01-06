@@ -1,38 +1,57 @@
 <template>
+  <div class="p-card">
+    <div v-on:click="closeModal()" class="c-card">
+    </div>
     <div class="card">
       <img :src="image" class="about-list-icon">
       <p class="card-title">▶{{ title }}</p>
       <p class="card-description">
         {{ description }}
       </p>
-      <p class="close" @click="closeModal">&nbsp;&nbsp;閉じる&nbsp;&nbsp;</p>
+      <div v-on:click="closeModal()" class="close">
+        <p>&nbsp;&nbsp;閉じる&nbsp;&nbsp;</p>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
   name: 'CardModal01',
   props: {
-    title: { type: String, require: true },
-    description: { type: String, require: true },
-    image: { type: String, require: true },
+    modalName: { type: String },
+    title: { type: String, require: true, default: '' },
+    description: { type: String, require: true, default: '' },
+    image: { type: String, require: true, default: '' },
   },
-  data() {
-    return {
-      closeModal: true,
-    };
+  methods: {
+    closeModal() {
+      this.$emit('closeModal', this.modalName);
+    },
   },
 };
 </script>
 <style scoped>
-  .card {
-  background-color:rgba(0,0,0,0);
+.p-card {
   position: relative;
-  margin: 10px;
+  height: 100vh;
+  background-color: transparent;
+}
+.c-card{
+  height: 100vh;
+  width:100vw;
+  background-color: transparent;
+}
+.card {
+  position: absolute;
+  top:0;
+  background-color:white;
+  margin: 10px 2.5em;
   width: auto;
   height: 30em;
 }
 .about-list-icon {
-  width: 70%;
+  padding: 1em;
+  width: 60%;
 }
 .card-title {
   margin-top: 16px;
@@ -47,8 +66,10 @@ export default {
 }
 .close {
   color: #ff8a7d;
-  position: relative;
-  top: 120px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2em;
   margin-top: 16px;
   margin-bottom: 0px;
   font-size: 18px;

@@ -1,86 +1,92 @@
 <template>
   <div class="wrap">
-    <div class="card" @click="openModal01 = !openModal01">
+    <div class="card" v-on:click="modalActive('秘密基地')">
       <img src="../assets/img/about-list-icon01.svg" class="about-list-icon">
       <p class="card-title">▶︎オープンな秘密基地</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <transition name="fade">
       <div class="open-modal" v-if="openModal01">
-        <card-modal
+        <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon01.svg')"
           title="︎オープンな秘密基地"
-          description="テキストテキストテキストテキストテキスト">
+          description="テキストテキストテキストテキストテキスト"
+          modal-name="秘密基地">
         </card-modal>
       </div>
     </transition>
-    <div class="card" @click="openModal02 = !openModal02">
+    <div class="card" v-on:click="modalActive('クロスオーバー')">
       <img src="../assets/img/about-list-icon02.svg" class="about-list-icon">
       <p class="card-title">▶︎クロスオーバー</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <transition name="fade">
       <div class="open-modal" v-if="openModal02">
-        <card-modal
+        <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon02.svg')"
           title="︎クロスオーバー"
-          description="テキストテキストテキストテキストテキスト">
+          description="テキストテキストテキストテキストテキスト"
+          modal-name="クロスオーバー">
         </card-modal>
       </div>
     </transition>
-    <div class="card" @click="openModal03 = !openModal03">
+    <div class="card" v-on:click="modalActive('レベル上げ')">
       <img src="../assets/img/about-list-icon03.svg" class="about-list-icon">
       <p class="card-title">▶︎楽しむためのレベル上げ</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <transition name="fade">
       <div class="open-modal" v-if="openModal03">
-        <card-modal
+        <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon03.svg')"
           title="楽しむためのレベル上げ"
-          description="テキストテキストテキストテキストテキスト">
+          description="テキストテキストテキストテキストテキスト"
+          modal-name="レベル上げ">
         </card-modal>
       </div>
     </transition>
-    <div class="card" @click="openModal04 = !openModal04">
+    <div class="card" v-on:click="modalActive('楽しいを作る')">
       <img src="../assets/img/about-list-icon04.svg" class="about-list-icon">
       <p class="card-title">▶︎楽しいをつくる</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <transition name="fade">
       <div class="open-modal" v-if="openModal04">
-        <card-modal
+        <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon04.svg')"
           title="楽しいをつくる"
-          description="テキストテキストテキストテキストテキスト">
+          description="テキストテキストテキストテキストテキスト"
+          modal-name="楽しいを作る">
         </card-modal>
       </div>
     </transition>
-    <div class="card" @click="openModal05 = !openModal05">
+    <div class="card"  v-on:click="modalActive('やってみたら楽しい')">
       <img src="../assets/img/about-list-icon05.svg" class="about-list-icon">
       <p class="card-title-exception">▶︎「やってみたら楽しい」をやれる場所</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <transition name="fade">
       <div class="open-modal" v-if="openModal05">
-        <card-modal
+        <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon05.svg')"
           title="「やってみたら楽しい」をやれる場所"
-          description="テキストテキストテキストテキストテキスト">
+          description="テキストテキストテキストテキストテキスト"
+          modal-name="やってみたら楽しい">
         </card-modal>
       </div>
     </transition>
-    <div class="card" @click="openModal06 = !openModal06">
+    <div class="card"  v-on:click="modalActive('スマートなバカ')">
       <img src="../assets/img/about-list-icon06.svg" class="about-list-icon">
       <p class="card-title">▶︎スマートなバカ</p>
       <p class="event-read-more">&nbsp;&nbsp;READ MORE&nbsp;&nbsp;</p>
     </div>
     <transition name="fade">
       <div class="open-modal" v-if="openModal06">
-        <card-modal
+        <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon06.svg')"
           title="スマートなバカ"
-          description="テキストテキストテキストテキストテキスト">
+          description="テキストテキストテキストテキストテキスト"
+          modal-name="スマートなバカ">
         </card-modal>
       </div>
     </transition>
@@ -99,7 +105,25 @@ export default {
       openModal04: false,
       openModal05: false,
       openModal06: false,
+      modalName: '',
     };
+  },
+  methods: {
+    modalActive(number) {
+      if (number === '秘密基地') {
+        this.openModal01 = !this.openModal01;
+      } else if (number === 'クロスオーバー') {
+        this.openModal02 = !this.openModal02;
+      } else if (number === 'レベル上げ') {
+        this.openModal03 = !this.openModal03;
+      } else if (number === '楽しいを作る') {
+        this.openModal04 = !this.openModal04;
+      } else if (number === 'やってみたら楽しい') {
+        this.openModal05 = !this.openModal05;
+      } else if (number === 'スマートなバカ') {
+        this.openModal06 = !this.openModal06;
+      }
+    },
   },
 };
 </script>
@@ -155,11 +179,10 @@ export default {
 }
 .open-modal {
   position: absolute;
-  top: 100px;
-  max-width: 280px;
-  padding: 20px;
+  height: 100%;
+  width: 100vw;
   border-radius: 4px;
-  background-color:rgba(255,255,255,0.9);
+  background-color:transparent;
   z-index: 1;
 }
 /* モーダル表示/非表示のアニメーション */
