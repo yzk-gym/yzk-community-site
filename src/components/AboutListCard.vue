@@ -9,7 +9,7 @@
       <div class="open-modal" v-if="openModal01">
         <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon01.svg')"
-          title="︎オープンな秘密基地"
+          title="オープンな秘密基地"
           description="テキストテキストテキストテキストテキスト"
           modal-name="秘密基地">
         </card-modal>
@@ -24,7 +24,7 @@
       <div class="open-modal" v-if="openModal02">
         <card-modal v-on:closeModal="modalActive"
           :image="require('../assets/img/about-list-icon02.svg')"
-          title="︎クロスオーバー"
+          title="クロスオーバー"
           description="テキストテキストテキストテキストテキスト"
           modal-name="クロスオーバー">
         </card-modal>
@@ -183,7 +183,7 @@ export default {
   width: 100%;
   border-radius: 4px;
   background-color:transparent;
-  z-index: 1;
+  z-index: 100;
 }
 /* モーダル表示/非表示のアニメーション */
 .fade-enter {

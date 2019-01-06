@@ -9,7 +9,7 @@
         {{ description }}
       </p>
       <div v-on:click="closeModal()" class="close">
-        <p>&nbsp;&nbsp;閉じる&nbsp;&nbsp;</p>
+        <p class="close-text">閉じる</p>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .p-card {
   position: fixed;
-  top: 80px;
+  top: 30px;
   height: 100vh;
   background-color: transparent;
 }
@@ -45,11 +45,10 @@ export default {
 .card {
   position: absolute;
   top:0;
-  background-color:white;
-  opacity: .9;
+  background-color: rgba(255,255,255,0.9);
   margin: 10px 5%;
   width: 90%;
-  height: 82%;
+  height: 86%;
 }
 .about-list-icon {
   padding: 1em;
@@ -71,12 +70,15 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 2em;
+  bottom: 10px;
   margin-top: 16px;
   margin-bottom: 0px;
   font-size: 18px;
   font-weight: 500;
   text-decoration: underline;
   white-space: pre;
+}
+.close-text {
+  margin-bottom: 10px;
 }
 </style>
