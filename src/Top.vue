@@ -200,7 +200,7 @@ export default {
   top: 50px;
   left: 0;
   z-index: 1;
-  background-color: #000000;
+  background-color: #666666;
 }
 .past-event-title-div {
   text-align: right;
