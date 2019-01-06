@@ -14,13 +14,16 @@
       </router-link>
     <nav class="c-menu-list-item">
       <li>
-        <router-link to="/about" class="c-menu-list-item-link">YZKAMPヘようこそ</router-link>
+        <router-link to="/" class="c-menu-list-item-link">TOPページ</router-link>
       </li>
       <li>
-        <router-link to="/events" class="c-menu-list-item-link">今後の開催予定イベント一覧</router-link>
+        <router-link to="/about" class="c-menu-list-item-link">YZKAMPヘようこそ！</router-link>
       </li>
       <li>
-        <router-link to="/past_events" class="c-menu-list-item-link">過去の開催イベント一覧</router-link>
+        <router-link to="/events" class="c-menu-list-item-link">イベントスケジュール</router-link>
+      </li>
+      <li>
+        <router-link to="/past_events" class="c-menu-list-item-link">過去の開催イベント</router-link>
       </li>
     </nav>
     </div>

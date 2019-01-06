@@ -26,7 +26,7 @@ export default {
     margin:0;
     display: inline-block;
     font-size: 16px;
-    color: #ffffff;
+    color: #ebebeb;
     text-align: left;
   }
   .title {

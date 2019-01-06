@@ -4,7 +4,7 @@
     <section class="title-section">
       <content-title2 title="SCHEDULE"></content-title2>
       <p class="title-desctiption">
-        YZKAMPの今後のイベント開催リストです。<br>
+        YZKAMPの今後のイベントスケジュールです。<br>
         やってみたいものがあったら、<br>
         気軽に参加してみよう！<br>
         過去の開催イベントは<router-link to="/past_events" class="text-link">こちら</router-link>
@@ -110,7 +110,7 @@ export default {
     font-family: "yzk-font";
     font-size: 13px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ebebeb;
     line-height: 24px;
     letter-spacing: 1px;
   }

@@ -9,7 +9,7 @@
     </header>
     <div class="p-top-image">
       <logo></logo>
-      <p class="p-top-text">コピーが入りますダミーです。<br>スッキリ端的にわかりやすく。</p>
+      <p class="p-top-text">やってみたいを、<br>やってみよう。</p>
     <img src="./assets/img/tent.png" class="top-tent">
     </div>
     <div class="p-next-event">
@@ -27,7 +27,7 @@
       <div class="c-next-event-button">
         <template v-if="nextEvent['is_first'] === true">
           <a :href="nextEvent['link_url']" target="_blank">
-          <Button text="参加する"></Button>
+          <strong><Button text="参加する"></Button></strong>
           </a>
         </template>
       </div>
@@ -35,21 +35,21 @@
     <div class="p-lead">
       <img src="./assets/img/cube_logo_white.svg" class="c-lead-logo">
       <content-title2 title="Welcome to YZKAMP!" class="c-lead-title"></content-title2>
-      <p class="c-lead-text">コピーが入ります。
-        <br>ダミーコピーです。
-        <br>スッキリ簡潔にわかりやすく。
+      <p class="c-lead-text">YZKAMP(ユズキャンプ)は、
+        <br>みんなの「やってみたい」をやる場所です。
+        <br>気軽に参加してね！
       </p>
       <div class="c-description-readmore">
         <router-link to="/about">
-          <white-read-more></white-read-more>
+          <strong><white-read-more></white-read-more></strong>
         </router-link>
       </div>
     </div>
     <div class="p-schedule">
       <content-title title="SCHEDULE" class="c-schedule-title"></content-title>
       <Description v-bind:readmore="false"
-                   title="今後のイベントスケジュール"
-                   description="これから一ヶ月先のスケジュール。<br>あなたの参加をお待ちしております！"
+                   title="イベントスケジュール"
+                   description="開催予定のイベントを紹介。気になるイベントがあったら参加してみよう！"
                    class="c-schedule-description"></Description>
 <!--      <div class="p-calendar">
         <iframe
@@ -64,7 +64,7 @@
 -->
       <div class="c-schedule-button">
         <router-link to="/events">
-          <Button text="一覧を見る"></Button>
+          <strong><Button text="スケジュールを見る"></Button></strong>
         </router-link>
       </div>
     </div>
@@ -73,15 +73,15 @@
         <p class="c-past-events-title">&nbsp;&nbsp;&nbsp;&nbsp;PAST EVENTs</p>
       </div>
       <div class="c-past-events-description">
-        <p class="c-past-events-description-title">▶︎過去に開催したイベント</p>
+        <p class="c-past-events-description-title">▶︎過去の開催イベント</p>
         <p class="c-past-events-description-text">
-          これまでにYZKAMPが開催してきたイベントたち。
+          これまでにYZKAMPで開催してきたイベントたち。レポートが見れます。
         </p>
       </div>
       <img class="c-past-events-image" :src="pastEvent['image_path']">
       <div class="c-past-events-button">
         <router-link to="/past_events">
-          <Button text="一覧を見る"></Button>
+          <strong><Button text="過去の開催イベントを見る"></Button></strong>
         </router-link>
       </div>
     </div>

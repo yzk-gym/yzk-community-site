@@ -3,8 +3,8 @@
     <nav class="c-footer-itemlist">
       <ul class="c-footer-item">
         <li><p><router-link to="/">- TOPページ</router-link></p></li>
-        <li><p><router-link to="/about">- YZKAMPへようこそ</router-link></p></li>
-        <li><p><router-link to="/events">- 今後の開催予定イベント一覧</router-link></p></li>
+        <li><p><router-link to="/about">- YZKAMPへようこそ！</router-link></p></li>
+        <li><p><router-link to="/events">- イベントスケジュール</router-link></p></li>
         <li><p><router-link to="/past_events">- 過去の開催イベント</router-link></p></li>
       </ul>
     </nav>
@@ -31,6 +31,7 @@ export default {
   }
   .c-footer-copyright {
     text-align: center;
+    font-size: 14px;
     color: #009ACC;
     margin: 0 0;
     padding: 2em;
