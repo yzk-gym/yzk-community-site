@@ -92,7 +92,7 @@ a {
   font-family: 'fututa';
   font-size: 34px;
   text-align: right;
-  z-index: 100;
+  z-index: 10;
 }
 .c-banner{
   height: 180px;
