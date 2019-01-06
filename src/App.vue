@@ -18,6 +18,8 @@ export default {
 @media screen and (min-width: 480px) {
   #app {
     width: 375px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 #app {

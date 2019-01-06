@@ -180,7 +180,7 @@ export default {
 .open-modal {
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   border-radius: 4px;
   background-color:transparent;
   z-index: 1;

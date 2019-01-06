@@ -130,7 +130,7 @@ export default {
 </script>
 <style scoped>
   #event_description {
-    width: 100vw;
+    width: 100%;
     background-color: #009ACC;
   }
   .title-section {
