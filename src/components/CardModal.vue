@@ -5,8 +5,8 @@
     <div class="card">
       <img :src="image" class="about-list-icon">
       <p class="card-title">{{ title }}</p>
-      <p class="card-description">
-        {{ description }}
+      <p class="card-description" v-html="description">
+        <!--{{ description }}-->
       </p>
       <div v-on:click="closeModal()" class="close">
         <p class="close-text">閉じる</p>
@@ -61,7 +61,7 @@ export default {
   width: 60%;
 }
 .card-title {
-  margin-top: 16px;
+  margin-top: 0px;
   font-size: 22px;
   font-weight: bold;
   color: #ff8a7d;
@@ -70,6 +70,11 @@ export default {
 }
 .card-description {
   color: #009ACC;
+  text-align: left;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-size: 14px;
+  line-height: 18px;
 }
 .close {
   color: #ff8a7d;
