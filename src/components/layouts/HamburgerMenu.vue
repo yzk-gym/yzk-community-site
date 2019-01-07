@@ -55,6 +55,11 @@ export default {
     height: 3em;
     width: 100vw;
   }
+  @media screen and (min-width: 480px) {
+    .p-menu {
+      width: 375px;
+    }
+  }
   .c-hamburger-menu {
     position: absolute;
     top: 1em;
@@ -99,6 +104,11 @@ export default {
     width: 100vw;
     height: auto;
     opacity: 0;
+  }
+  @media screen and (min-width: 480px) {
+    .c-menu-list {
+      width: 375px;
+    }
   }
   .c-menu-list.is-active {
     pointer-events: all;
