@@ -35,11 +35,12 @@ export default {
   position: fixed;
   top: 30px;
   height: 100vh;
+  width: 100%;
   background-color: transparent;
 }
 @media screen and (min-width: 480px) {
   .p-card {
-    width: 350px;
+    width: 375px;
   }
 }
 .c-card{
