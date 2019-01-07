@@ -3,7 +3,12 @@
     <contents-header></contents-header>
     <section class="title-section">
       <content-title title="Welcome to YZKAMP!" class="c-description-title"></content-title>
-      <p class="title-description">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p class="title-description">YZKAMPはみんなの遊び場です。<br>
+        みんなの「やりたいこと」をやりたいと思っています。<br>
+        そして、YZKAMPがこういう風になったらいいな、<br>
+        と思っていることがいくつかあります。<br>
+        <br>
+        興味があったら読んでみてね。</p>
     </section>
     <section class="about-list-card">
       <about-list-card></about-list-card>
@@ -15,7 +20,7 @@
     </div>
     <div class="footer-section">
       <router-link to="/events">
-        <AboutListButton class="about-list-button" text="◀︎イベント一覧を見る"></AboutListButton>
+        <AboutListButton class="about-list-button" text="◀︎イベントスケジュールをみる"></AboutListButton>
       </router-link>
       <white-footer></white-footer>
     </div>
@@ -41,7 +46,7 @@ export default {
 </script>
 <style scoped>
 #about-list {
-  width: 100vw;
+  width: 100%;
   background-color: #009acc;
 }
 .c-description-title {
@@ -58,7 +63,7 @@ export default {
   font-family: "yzk-font";
   font-size: 13px;
   font-weight: bold;
-  color: #ffffff;
+  color: #ebebeb;
   line-height: 24px;
   letter-spacing: 1px;
 }
@@ -70,7 +75,7 @@ export default {
   font-family: "yzk-font";
   font-size: 22px;
   font-weight: bold;
-  color: #ffffff;
+  color: #ebebeb;
   line-height: 32px;
   letter-spacing: 2px;
 }

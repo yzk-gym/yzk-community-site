@@ -28,6 +28,11 @@ header {
   width:100vw;
   z-index: 99;
 }
+@media screen and (min-width: 480px) {
+  header {
+    width: 375px;
+  }
+}
 
 a {
   text-decoration: none;
@@ -36,13 +41,19 @@ a {
 /* top画面 */
 
 .top {
-  width: 100vw;
+  width: 100%;
   background-color: #009ACC;
 }
 .top-header{
   position: relative;
   width:100vw;
 }
+@media screen and (min-width: 480px) {
+  .top-header {
+    width: 375px;
+  }
+}
+
 .p-top-image{
   padding: 1em;
 }
