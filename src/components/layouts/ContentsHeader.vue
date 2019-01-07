@@ -32,6 +32,11 @@ export default {
     background-color: #0085B3;
     z-index: 30;
   }
+  @media screen and (min-width: 480px) {
+    .p-header {
+      width: 375px;
+    }
+  }
   .p-header-logo {
     position: absolute;
     margin: 0.5em;

@@ -37,9 +37,14 @@ export default {
   height: 100vh;
   background-color: transparent;
 }
+@media screen and (min-width: 480px) {
+  .p-card {
+    width: 350px;
+  }
+}
 .c-card{
-  height: 100vh;
-  width:100vw;
+  height: 100%;
+  width:100%;
   background-color: transparent;
 }
 .card {
