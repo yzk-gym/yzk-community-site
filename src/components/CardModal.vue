@@ -73,7 +73,7 @@ export default {
   text-align: left;
   margin-right: 30px;
   margin-left: 30px;
-  font-size: 14px;
+  font-size: 0.8em;
   line-height: 18px;
 }
 .close {
