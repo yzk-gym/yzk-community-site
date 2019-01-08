@@ -18,7 +18,7 @@ export default {
   .c-logo-cube {
     display: block;
     height: 80px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 8px auto;
   }
   .c-logo-text {
     display: block;
