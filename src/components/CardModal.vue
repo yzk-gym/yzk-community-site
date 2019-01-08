@@ -52,9 +52,9 @@ export default {
   position: absolute;
   top:0;
   background-color: rgba(255,255,255,0.9);
-  margin: 10px 5%;
+  margin: 5px 5%;
   width: 90%;
-  height: 86%;
+  height: 88%;
 }
 .about-list-icon {
   padding: 1em;
@@ -62,10 +62,9 @@ export default {
 }
 .card-title {
   margin-top: 0px;
-  font-size: 22px;
+  font-size: 2.6vh;
   font-weight: bold;
   color: #ff8a7d;
-  line-height: 24px;
   letter-spacing: 1px;
 }
 .card-description {
@@ -73,8 +72,8 @@ export default {
   text-align: left;
   margin-right: 30px;
   margin-left: 30px;
-  font-size: 0.8em;
-  line-height: 18px;
+  font-size: 2.1vh;
+  line-height: 2.7vh;
 }
 .close {
   color: #ff8a7d;
@@ -82,14 +81,12 @@ export default {
   left: 0;
   right: 0;
   bottom: 10px;
-  margin-top: 16px;
-  margin-bottom: 0px;
-  font-size: 18px;
+  font-size: 2.6vh;
   font-weight: 500;
   text-decoration: underline;
   white-space: pre;
 }
 .close-text {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 </style>
