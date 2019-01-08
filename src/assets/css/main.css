@@ -62,10 +62,10 @@ a {
   font-weight: bold;
   line-height: 22px;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 16px;
   color: #ebebeb;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 14px;
+  margin-bottom: 4px;
 }
 .top-tent {
   width: auto;
