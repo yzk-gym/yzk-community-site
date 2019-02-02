@@ -35,7 +35,11 @@ export default {
     };
   },
   beforeRouteEnter(route, redirect, next) {
-    firestore.collection('events').where('begin_datetime', '<=', firebase.firestore.Timestamp.now()).orderBy('begin_datetime', 'desc').get()
+    firestore.collection('events')
+      .where('is_public', '==', true)
+      .where('begin_datetime', '<=', firebase.firestore.Timestamp.now())
+      .orderBy('begin_datetime', 'desc')
+      .get()
       .then((querySnapshot) => {
         const events = [];
         querySnapshot.forEach((doc) => {
