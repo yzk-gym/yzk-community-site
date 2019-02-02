@@ -118,7 +118,11 @@ export default {
     };
   },
   created() {
-    firestore.collection('events').where('begin_datetime', '<=', this.getNowFormattedFirebase()).orderBy('begin_datetime', 'desc').limit(1)
+    firestore.collection('events')
+      .where('is_public', '==', true)
+      .where('begin_datetime', '<=', this.getNowFormattedFirebase())
+      .orderBy('begin_datetime', 'desc')
+      .limit(1)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -134,7 +138,11 @@ export default {
             };
         });
       });
-    firestore.collection('events').where('begin_datetime', '>=', this.getNowFormattedFirebase()).orderBy('begin_datetime').limit(1)
+    firestore.collection('events')
+      .where('is_public', '==', true)
+      .where('begin_datetime', '>=', this.getNowFormattedFirebase())
+      .orderBy('begin_datetime')
+      .limit(1)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
