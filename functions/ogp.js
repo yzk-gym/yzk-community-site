@@ -1,8 +1,8 @@
-import firestore from '../src/assets/javascript/firebase';
+const FIRESTORE = require('../src/assets/javascript/firebase');
 
 exports.handler = function (event, context, callback) {
   const EVENT_ID = event.queryStringParameters.path;
-  console.log(firestore.collection('events'));
+  console.log(FIRESTORE.collection('events'));
   callback(null, {
     statusCode: 200,
     body: `<html>
